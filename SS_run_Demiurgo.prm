@@ -1,0 +1,114 @@
+# March - August 2019, Heidi Pethybridge
+# Updated July 2020
+# Javier Porobic
+# Salish Sea Atlantis model run file
+#############################################
+# Run parameters
+verbose       	    0   # Detailed logged output
+check_dups    	    0   # click 1 to check for duplicated params
+flag_replicated_old 0   # Whether reproducing old code quirks
+
+flagecon_on         0   # Flag showing whether want economics loaded and submodel run (1) or not (0)
+flag_fisheries_on   0   # Flag showing whether want fisheries loaded and submodel run (1) or not (0)
+flag_skip_biol      0   # Flag showing whether want biological model; If 1 the Ecology submodel is not loaded only for debugging!
+flag_skip_phys      0   # Flag showing whether want biological model run (0) or not (1 - only used when debugging fisheries)
+trackAtomicRatio    0   # Flag indicating whether want to use P and C not just N
+track_rugosity_arag 1   # flag indicating that rugosity and aragonite saturation to be tracked - needed for corals
+track_pH            1   # flag indicating that pH to be tracked
+flag_use_deltaH     0   # Flag to use dH for calculation of acidification
+mirror_invalid      0   # Flag indicating whether want the model to estimate source destinations of hydrodynamics if have invalide feed data (1) or not (0)
+track_contaminants  0   # Whether tracking contaminants or not
+flagpassivetracer   0   # Flag indicating whether a passive tracer is needed for tracking tranpsorts or not (1 = yes, 0 = no)
+flag_sanity_check   1   # flag to check for the large vertebrate reproduction bug
+
+flag_old_embryo_init        0
+flag_replicate_old_calendar 0
+external_populations        0
+flag_multiyr_migs           0
+store_aggregate_yoy         1
+store_mig_array             1
+
+checkbox      223         # Give detailed logged output for this box
+checkstart    100000000000 day     # Start detailed logged output after this date
+checkstop     100000000000 day
+fishtest      0        # Count up total population for each vertebrate after each main subroutine: 0=no, 1=yes
+flaggape      0        # Periodically list prey vs gape statistics (tuning diagnostic)
+flagchecksize 0        # Periodically list relative size (tuning diagnostic)
+flagagecheck  0        # Periodically list age structure per cohort (tuning diagnostic) ** ?
+flagdietcheck 1        # Periodically list realised diet matchups (tuning diagnostic) ** Detailed dietcheck
+checkNH       0        # Give detailed logged output for NH in checkbox
+checkDL       0        # Give detailed logged output for DL in checkbox
+checkDR       0        # Give detailed logged output for DR in checkbox
+checkbiom     1        # Give detailed logged output for biomasses in checkbox
+which_check   224        # ID number of group to track (if don't want to track anything set to 80 (for other groups see list below)
+habitat_check 0
+which_fleet   33       # ID number of fleet to track (if don't want to track anything set to 33 (for other fleets see list below)
+move_check    67       # ID number of group where tracking movements  (if don't want to track anything set it to 67, for other groups see list below)
+fishmove      0        # Set to 0 to turn vertebrate movement off for debugging purposes
+debug         0        # 0=debuging off, 1=debug fishing, 2=debug discards, 3=debug histfishing,
+                       # 4=debug assessments, 5=debug mpas, 6=debug effort, 7=debug econ effort,
+                       # 8=debug econ, 9=debug quota, 10=debug aging, 11=debug_spawning,
+                       # 12=debug migration, 13=debug movement, 14=debug stocks,
+                       # 15=debug biomass calcs, 16=debug feeding, 17=debug everything
+
+flag_age_output  1     # 1 = age structured overall biomass output desired, 0 = off     **
+
+debug_it      0
+flagIsEstuary 0
+tburnday      0
+
+title      SalishSea model run
+dt         12 hour     # 12 hour time step
+tstop      50 day      # Stop time after the given period (1822 = 5; 3650=10; 5475=15; 7300=20, 18250 = 50)
+toutstart  0 day       # Output start time
+toutinc    1 day       # Write output with this periodicity: 1yr run = 1 day; 5 year = 30; 20 year = 91 days
+toutfinc   1 day     # Write fisheries output with this periodicity
+
+tsumout    1 day     # Write stock state summary with this periodicity; migration debug
+fishout    0          # Switch to turn fisheries output on = 1, off = 0
+flagreusefile 2        # Switch to show want to append output file no = 0, yes = 1, replace = 2
+flagannual_Mest 1      # Write out mortality per predator annually (1) or not (0) #
+
+# Parameters defining the numbers of certain types of groups (needed to  parameter arrays in the
+# initialisation section of the model, best left untouched for now)
+K_num_tot_sp    58    # total number of biological groups in the model
+K_num_vert_sp   33     # total number of vertebrate groups in the model
+K_num_stocks_per_sp 1  # maximum number of stocks per group in the model
+K_num_cohorts   10     # maximum number of cohorts (age stages) for a vertebrate group
+K_num_invert    10     # total number of invertebrate groups in the model
+K_num_invcohorts 2     # maximum number of cohorts for an invertebrate group
+K_num_detritus   3     # Total number of detritus groups in the model (labile and refractory; water column and sediments)
+K_num_invmig     5     # Maximum number of vertically migrating invertebrate groups
+K_num_bed_types  3     # maximum number of seabed types (currently only reef, soft and flat)
+K_num_cover_types 8    # maximum number of habitat types  (filter feeders, sponges, macroalgae, seagrass)
+
+# Parameters defining the numbers of certain types of fisheries
+# (needed to  parameter arrays in the initialisation section of the model)
+K_num_fisheries   18   # Maximum number of fisheries
+K_num_subfleet    1    # Maximum number of sub fleets (vessel types)
+K_num_fished_sp   40   # Maximum number of groups targeted by fishing
+K_num_impacted_sp 40   # Maxiumum number of groups impacted by fishing (target or bycatch)
+K_num_ports       1    # Maxiumum number of ports in the model area
+K_max_num_zoning  1    # Maximum number of spatial zonings used in the model
+K_num_markets     1    # Maxiumum number of markets in the model area
+K_num_reg   1
+K_num_catchqueue  7
+
+# Location parameters
+flaghemisphere    1    # Flag for hemisphere model is in (0 = southern; 1 = northern)
+flagAllowLand     0    # Whether to allow for dynamic land layers (1) or not (0)
+flagindustry_on   0    # Flag indicating whether industry models are on (1) or not (0)
+
+# Parameters for rescalingin inital vertebrate densities - only for use in emergencies,
+flagscaleinit     0  # Flag to indicate whether scaling initial vertebrate densities (1=yes, 0=no); 1 selected and rescales by the factor stated below. read numbers and multiplies.
+
+# Multiplicative scalr for vertebrate initial densities (as read-in from cdf file)
+init_scalar       58
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+
+cont_warn 0
+K_num_soil_layers 0
+K_num_catchments 0
+K_max_num_occupations 0
+K_max_active_cities 0
+K_num_oil_companies 0

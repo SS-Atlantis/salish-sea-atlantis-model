@@ -1,0 +1,19 @@
+Code,Index,Name,IsRec,NumSubFleets
+CrabTRAP,0,crab and prawn traps,0,0
+PrawnTRAWL,1,trawl for prawns and scallops,0,0
+InvertDIVE,2,Invertebrate dive,0,0
+KrillTRAWL,3,Euphausiid fishery,0,0
+Salmon,4,"seine, gillnet, hook and line",0,0
+PelagicsFISH,5,Small pelagics fisheries,0,0
+FishTRAWL,6,Groundfish trawl fisheries,0,0
+FishLINE,7,Groundfish hook line fisheries,0,0
+FSC,8,First Nations Fisheries,0,0
+AqualSHELL,9,aquaculture on shellfish,0,0
+AqualFISH,10,aquaculture on fish,0,0
+Recfish,11,recreational fisheries,1,0
+CHRTboat,12,charter vessels,1,0
+SHIP,13,shipping impacts,0,0
+LANDUSE,14,land use impacts,0,0
+ONG,15,energy generation impacts,0,0
+TOUR,16,tourism,0,0
+DRG,17,dredging,0,0

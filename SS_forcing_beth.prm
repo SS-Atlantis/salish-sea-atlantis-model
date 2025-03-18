@@ -1,0 +1,120 @@
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+##           FORCING FILES        ##
+##~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~##
+# input directories
+nhdfiles 1
+
+hd0.name inputs/Hydro/SS_hydro_07_21.nc
+
+ts_on_hydro_time 1
+
+# Frequency of inputs.ts and exports.ts output. Write out every 365 days.
+inputs_tout 365 days
+
+# Bottom stress
+# BottomStress inputs/stress/stress.nc
+# BottomStress inputs/stress/nxstress.nc
+
+use_VertMixFiles 0  ###*** New parameter 2018
+
+#############################################
+# Point source\sink lists
+npointss 0
+
+##########################################
+# Temperature time series file
+use_tempfiles 1
+ntempfiles 1
+Temperature0.name inputs/Hydro/SS_temp_07_21.nc
+temp_rewind 1
+
+# Salinity time series data file
+use_saltfiles 1
+nsaltfiles 1
+Salinity0.name inputs/Hydro/SS_salt_07_21.nc
+salt_rewind 1
+
+# Rain and evaporation
+#Precipitation inputs/meteor/times1.6.nc
+#Evaporation   inputs/meteor/84-95.nc
+
+#Solar time series run vicmpa file
+#Solar_radiation NewInputs/meteor/solar9195.ts
+#Solar_radiation_rewind 0
+
+use_phFiles 0
+use_VertMixFiles 0
+
+# Atmospheric pCO2 time series file
+# pCO2_forcing NewInputs/pCO2RCP45.ts
+
+# Recruitment_time_series
+
+# Recruitment_enviro_forcing
+
+
+#############################################
+# Historical catch lists - nCatchts is the number of time series to be loaded and
+# typeCatchts is whether or not the data is to be interpolated (0) by the model
+# or just use previous record (1)
+nCatchts 0
+typeCatchts 0
+
+#############################################
+# Historical discard lists
+nDiscardts 0
+typeDiscardts 0
+
+#############################################
+# Residual lists - on market fish prices
+nResidualsts 0
+typeResidualsts 0
+
+#############################################
+# Economic statistics - GDP and fuel costs
+nEconts 0
+typeEconts 0
+
+##############################################
+# MPA (spatial management) files for cases where change through time
+# Same format as Catchts above
+nMPAts 0
+typeMPAts 0
+
+
+###########################################################################################
+# Added by Bec Gorton 5th Feb 2018. Please check these values are valid.
+
+use_stressfiles 0
+
+
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
+## ~      Adding contaminant tracers in the model       ~ ##
+## ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ##
+
+use_force_tracers 1
+use_weighted_assim 0
+
+# The number of tracers to search for in the files and the names of those tracers.
+nforceTracers 4
+tracerNames 4
+Naphthalene Phenanthrene Pyrene Benzo
+
+# Now the actual files. Can have more than one tracer in a file
+Naphthalene_nFiles 1
+Naphthalene_File0.name inputs/contam_SSAtlantis_4PAH.nc
+Naphthalene_rewind 0
+
+Phenanthrene_nFiles 1
+Phenanthrene_File0.name inputs/contam_SSAtlantis_4PAH.nc
+Phenanthrene_rewind 0
+
+Pyrene_nFiles 1
+Pyrene_File0.name inputs/contam_SSAtlantis_4PAH.nc
+Pyrene_rewind 0
+
+Benzo_nFiles 1
+Benzo_File0.name inputs/contam_SSAtlantis_4PAH.nc
+Benzo_rewind 0
+
+use_pollutantfiles 0

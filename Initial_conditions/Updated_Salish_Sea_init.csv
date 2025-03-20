@@ -1,0 +1,936 @@
+name,required,dimensions,dimnames,bmtype,units,long_name,dtype,sumtype,inwc,insed,dissol,decay,partic,fill.value,passive,svel,xvel,psize,b_dens,i_conc,f_conc,wc.hor.pattern,wc.ver.pattern,sediment,wc.hor.scalar
+volume,TRUE,2,[ z b ],phys,m3,Volume,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,calculated,calculated,1,1
+nominal_dz,TRUE,2,[ z b ],phys,m,Thickness,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,calculated,calculated,1,1
+dz,TRUE,2,[ z b ],phys,m,Thickness,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,calculated,calculated,1,1
+numlayers,TRUE,1,[ b ],phys,1,Number of layers,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,calculated,none,0,1
+hdsource,TRUE,2,[ z b ],phys,1,Hydrodynamic sources,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+hdsink,TRUE,2,[ z b ],phys,1,Hydrodynamic sinks,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+eflux,TRUE,2,[ z b ],phys,1,Hydrodynamic net exchanges,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+vflux,TRUE,2,[ z b ],phys,1,Hydrodynamic net vertical exchanges,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+porosity,TRUE,2,[ z b ],phys,1,Porosity,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+topk,TRUE,1,[ b ],phys,1,Sediment top index,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+sedbiodepth,TRUE,1,[ b ],phys,m,Depth of biological activity,0,0,NA,NA,NA,NA,NA,0.2,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+seddetdepth,TRUE,1,[ b ],phys,m,Max depth of detritus,0,0,NA,NA,NA,NA,NA,0.25,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+sedoxdepth,TRUE,1,[ b ],phys,m,Depth of oxygen horizon,0,0,NA,NA,NA,NA,NA,0.1,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+sedbiodens,TRUE,1,[ b ],phys,Animals m-2,Biological activity,0,0,NA,NA,NA,NA,NA,100,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+sedirrigenh,TRUE,1,[ b ],phys,1,Bioirrigation enhancement,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+sedturbenh,TRUE,1,[ b ],phys,1,Bioturbation enhancement,0,0,NA,NA,NA,NA,NA,1E-06,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+erosion_rate,TRUE,1,[ b ],phys,m s-1,Erosion rate,0,0,NA,NA,NA,NA,NA,4E-07,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+reef,TRUE,1,[ b ],tracer,1,Percent reef cover,0,1,NA,NA,NA,NA,NA,0.2,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+flat,TRUE,1,[ b ],tracer,1,Percent flat cover,0,1,NA,NA,NA,NA,NA,0.8,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+soft,TRUE,1,[ b ],tracer,1,Percent soft cover,0,1,NA,NA,NA,NA,NA,0.8,NA,NA,NA,NA,NA,NA,NA,custom,none,0,1
+canyon,TRUE,1,[ b ],tracer,1,Percent canyon,0,0,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,constant,none,0,0
+eddy,TRUE,1,[ b ],tracer,1,Eddy strength,0,1,NA,NA,NA,NA,NA,0.8,NA,NA,NA,NA,NA,NA,NA,constant,none,0,1
+water,TRUE,2,[ z b ],tracer,1,Water,0,0,1,1,1,0,0,1,NA,NA,NA,NA,NA,NA,NA,constant ,uniform,0,0
+Rugosity,TRUE,2,[ z b ],tracer,1,rugosity,0,0,1,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,custom,uniform,0,0
+AragoniteSaturation,TRUE,2,[ z b ],tracer,1,Aragonite Saturation,0,0,1,1,1,0,0,3,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+NH3,TRUE,2,[ z b ],tracer,mg N m-3,Ammonia,0,1,1,1,1,0,0,5,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0.2,0.55
+NO3,TRUE,2,[ z b ],tracer,mg N m-3,Nitrate,0,1,1,1,1,0,0,5,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0.2,0.1
+DON,TRUE,2,[ z b ],tracer,mg N m-3,Dissolved Organic Nitrogen,0,1,1,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,90,90
+MicroNut,TRUE,2,[ z b ],tracer,mg N m-3,Dissolved Organic Nitrogen,0,1,1,1,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,2.7,2.7
+Oxygen,TRUE,2,[ z b ],tracer,mg O2 m-3,Dissolved Oxygen,0,1,1,1,1,0,0,8000,NA,NA,NA,NA,NA,NA,NA,constant,uniform,6700,6700
+Si,TRUE,2,[ z b ],tracer,mg Si m-3,Dissolved Silica,0,1,1,1,1,0,0,14,NA,NA,NA,NA,NA,NA,NA,constant,uniform,16.65,0.9
+Det_Si,TRUE,2,[ z b ],tracer,mg Si m-3,Detrital Silica,0,1,1,1,0,0,1,1,1,-2.89E-05,1E-07,1E-05,1000000000,200000000,200000000,constant,uniform,27000,9
+Light,TRUE,2,[ z b ],tracer,missing,Light intensity on the surface of a cell,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,1E-06,0.01
+Temp,TRUE,2,[ z b ],tracer,degrees Celcius,Temperature,0,1,0,0,1,0,0,15,NA,NA,NA,NA,NA,NA,NA,constant,uniform,22,28
+salt,TRUE,2,[ z b ],tracer,PSU,Salinity,0,1,1,1,1,0,0,35,NA,NA,NA,NA,NA,NA,NA,constant,uniform,33,33
+Denitrifiction,TRUE,2,[ z b ],tracer,missing,Denitrifiction (N),0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Nitrification,TRUE,2,[ z b ],tracer,missing,Nitrification (N),0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Chl_a,TRUE,2,[ z b ],tracer,missing,Chlorophyll,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,6.3,9.8
+Stress,TRUE,2,[ z b ],tracer,N m-2,Surface stress,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+DiagNGain,TRUE,2,[ z b ],tracer,N m-2,Diagnostic - gain in checked group,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+DiagNLoss,TRUE,2,[ z b ],tracer,N m-2,Diagnostic - loss in checked group,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+DiagNFlux,TRUE,2,[ z b ],tracer,N m-2,Diagnostic - flux in checked group,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Crabs_N,FALSE,1,[ b ],epibenthos,mg N m-2,Crabs Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Dungeness_crabs_N,FALSE,1,[ b ],epibenthos,mg N m-2,Dungeness_crabs Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Bivalves_N,FALSE,1,[ b ],epibenthos,mg N m-2,Bivalves Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Squid_N,FALSE,2,[ z b ],tracer,mg N m-3,Squid Nitrogen,0,1,1,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,uniform,0,0
+Filter_feeder_N,FALSE,1,[ b ],epibenthos,mg N m-2,Filter_feeder Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Filter_feeder_Cover,FALSE,1,[ b ],epibenthos,%,Percent cover by Filter_feeder,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Sponges_N,FALSE,1,[ b ],epibenthos,mg N m-2,Sponges Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Sponges_Cover,FALSE,1,[ b ],epibenthos,%,Percent cover by Sponges,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Benthic_grazer_N,FALSE,1,[ b ],epibenthos,mg N m-2,Benthic_grazer Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Macrobenthos_N,FALSE,1,[ b ],epibenthos,mg N m-2,Macrobenthos Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Prawn_N,FALSE,2,[ z b ],tracer,mg N m-3,Prawn Nitrogen,0,1,1,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,uniform,0,0
+Deposit_Feeder_N,FALSE,2,[ z b ],tracer,mg N m-3,Deposit_Feeder Nitrogen,0,1,0,1,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,uniform,0,0
+Benthic_Carniv_N,FALSE,2,[ z b ],tracer,mg N m-3,Benthic_Carniv Nitrogen,0,1,0,1,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,uniform,0,0
+Macroalgae_N,FALSE,1,[ b ],epibenthos,mg N m-2,Macroalgae Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Macroalgae_Cover,FALSE,1,[ b ],epibenthos,%,Percent cover by Macroalgae,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Seagrass_N,FALSE,1,[ b ],epibenthos,mg N m-2,Seagrass Nitrogen,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Seagrass_Cover,FALSE,1,[ b ],epibenthos,%,Percent cover by Seagrass,0,1,NA,NA,NA,NA,NA,0,NA,NA,NA,NA,NA,NA,NA,custom,none,0,0
+Gelat_Zoo_N,FALSE,2,[ z b ],tracer,mg N m-3,Gelat_Zoo Nitrogen,0,1,1,0,0,0,1,0,1,0,0,0.1,1000000000,200000000,200000000,custom,uniform,0,0
+Diatom_N,FALSE,2,[ z b ],tracer,mg N m-3,Diatom Nitrogen,0,1,1,1,0,0,1,0,1,-2.89E-06,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Diatom_S,FALSE,2,[ z b ],tracer,mg Si m-3,Diatom Silicon,0,1,1,1,0,0,1,0,1,-2.89E-06,0,1E-05,1000000000,200000000,200000000,constant,uniform,0,0
+Light_Adaptn_PL,FALSE,2,[ z b ],tracer,PSU,Light adaption of Diatom,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+PicoPhytopl_N,FALSE,2,[ z b ],tracer,mg N m-3,PicoPhytopl Nitrogen,0,1,1,1,0,0,1,0,1,0,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Light_Adaptn_PS,FALSE,2,[ z b ],tracer,PSU,Light adaption of PicoPhytopl,0,0,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Carniv_Zoo_N,FALSE,2,[ z b ],tracer,mg N m-3,Carniv_Zoo Nitrogen,0,1,1,0,0,0,1,0,1,0,0,0.1,1000000000,200000000,200000000,custom,uniform,0,0
+Zoo_N,FALSE,2,[ z b ],tracer,mg N m-3,Zoo Nitrogen,0,1,1,0,0,0,1,0,1,0,0,0.001,1000000000,200000000,200000000,custom,uniform,0,0
+MicroZoo_N,FALSE,2,[ z b ],tracer,mg N m-3,MicroZoo Nitrogen,0,1,1,0,0,0,1,0,1,0,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Pelag_Bact_N,FALSE,2,[ z b ],tracer,mg N m-3,Pelag_Bact Nitrogen,0,1,1,0,0,0,1,0.02,1,0,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Sed_Bact_N,FALSE,2,[ z b ],tracer,mg N m-3,Sed_Bact Nitrogen,0,1,0,1,0,0,1,100,1,0,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Meiobenth_N,FALSE,2,[ z b ],tracer,mg N m-3,Meiobenth Nitrogen,0,1,0,1,0,0,1,0,0,0,0,0.001,1000000000,200000000,200000000,custom,uniform,0,0
+Lab_Det_N,FALSE,2,[ z b ],tracer,mg N m-3,Lab_Det Nitrogen,0,1,1,1,0,0,1,2,1,-3.47E-06,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Ref_Det_N,FALSE,2,[ z b ],tracer,mg N m-3,Ref_Det Nitrogen,0,1,1,1,0,1E-07,1,2000,1,-2.31E-06,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Carrion_N,FALSE,2,[ z b ],tracer,mg N m-3,Carrion Nitrogen,0,1,1,1,0,0,1,0,0,-3.47E-05,0,1E-05,1000000000,200000000,200000000,custom,uniform,0,0
+Pacific_herring_N,FALSE,2,[ z b ],tracer,mg N m-3,Pacific_herring total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Pacific_herring1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pacific_herring cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pacific_herring1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pacific_herring cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pacific_herring10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pacific_herring cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish_N,FALSE,2,[ z b ],tracer,mg N m-3,Small_pelagic_fish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Small_pelagic_fish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_pelagic_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_pelagic_fish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_pelagic_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_pelagic_fish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_pelagic_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance_N,FALSE,2,[ z b ],tracer,mg N m-3,Sandlance total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Sandlance1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sandlance cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sandlance1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sandlance cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sandlance7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sandlance cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Chinook_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Chinook_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chinook_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chinook_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chinook_salmon4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chinook_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chinook_salmon5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chinook_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chinook_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chinook_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chinook_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chinook_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chinook_salmon5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chinook_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Coho_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Coho_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Coho_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Coho_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Coho_salmon4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Coho_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Coho_salmon5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Coho_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Coho_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Coho_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Coho_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Coho_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Coho_salmon5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Coho_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Sockeye_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Sockeye_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sockeye_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sockeye_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sockeye_salmon4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sockeye_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sockeye_salmon5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sockeye_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sockeye_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sockeye_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sockeye_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sockeye_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sockeye_salmon5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sockeye_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Pink_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Pink_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pink_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pink_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pink_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pink_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pink_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pink_salmon4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pink_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pink_salmon5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pink_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pink_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pink_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pink_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pink_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pink_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pink_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pink_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pink_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pink_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pink_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pink_salmon5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pink_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Chum_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Chum_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chum_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chum_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chum_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chum_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chum_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chum_salmon4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chum_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chum_salmon5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Chum_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Chum_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chum_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chum_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chum_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chum_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Chum_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chum_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chum_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chum_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chum_salmon cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Chum_salmon5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Chum_salmon cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids_N,FALSE,2,[ z b ],tracer,mg N m-3,Other_salmonids total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Other_salmonids1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Other_salmonids cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Other_salmonids1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Other_salmonids cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Other_salmonids8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Other_salmonids cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Hatchery_Chinook_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Hatchery_Chinook_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Chinook_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Chinook_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Chinook_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Chinook_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Chinook_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Chinook_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Chinook_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Hatchery_Coho_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Hatchery_Coho_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Coho_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Coho_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Coho_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Coho_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Coho_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Coho_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Coho_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon_N,FALSE,2,[ z b ],tracer,mg N m-3,Hatchery_Sockeye_salmon total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Hatchery_Sockeye_salmon1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Sockeye_salmon2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Sockeye_salmon3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hatchery_Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hatchery_Sockeye_salmon1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hatchery_Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Sockeye_salmon cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Sockeye_salmon cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hatchery_Sockeye_salmon3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hatchery_Sockeye_salmon cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake_N,FALSE,2,[ z b ],tracer,mg N m-3,Hake total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Hake1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Hake cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Hake1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Hake cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Hake10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Hake cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock_N,FALSE,2,[ z b ],tracer,mg N m-3,Pollock total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Pollock1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Pollock cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Pollock1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Pollock cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Pollock10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Pollock cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod_N,FALSE,2,[ z b ],tracer,mg N m-3,Lingcod total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Lingcod1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Lingcod cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Lingcod1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Lingcod cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Lingcod10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Lingcod cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic_N,FALSE,2,[ z b ],tracer,mg N m-3,Benthopelagic total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Benthopelagic1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Benthopelagic cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Benthopelagic1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Benthopelagic cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Benthopelagic10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Benthopelagic cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish_N,FALSE,2,[ z b ],tracer,mg N m-3,Small_Demersal_fish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Small_Demersal_fish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Demersal_fish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Demersal_fish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish_N,FALSE,2,[ z b ],tracer,mg N m-3,Large_Demersal_fish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Large_Demersal_fish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Demersal_fish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Demersal_fish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Demersal_fish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish_N,FALSE,2,[ z b ],tracer,mg N m-3,Rockfish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Rockfish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Rockfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Rockfish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Rockfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Rockfish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Rockfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish_N,FALSE,2,[ z b ],tracer,mg N m-3,Small_Flatfish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Small_Flatfish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Small_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Small_Flatfish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Small_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Small_Flatfish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Small_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish_N,FALSE,2,[ z b ],tracer,mg N m-3,Large_Flatfish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Large_Flatfish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Large_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Large_Flatfish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Large_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Large_Flatfish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Large_Flatfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish_N,FALSE,2,[ z b ],tracer,mg N m-3,Dogfish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Dogfish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Dogfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Dogfish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Dogfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Dogfish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Dogfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill_N,FALSE,2,[ z b ],tracer,mg N m-3,Sixgill total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Sixgill1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sixgill cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sixgill1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sixgill cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sixgill10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sixgill cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish_N,FALSE,2,[ z b ],tracer,mg N m-3,Ratfish total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Ratfish1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Ratfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Ratfish1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Ratfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Ratfish10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Ratfish cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates_N,FALSE,2,[ z b ],tracer,mg N m-3,Skates total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Skates1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Skates cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Skates1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Skates cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Skates10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Skates cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls_N,FALSE,2,[ z b ],tracer,mg N m-3,Seabird_gulls total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Seabird_gulls1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabird_gulls cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabird_gulls1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabird_gulls cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabird_gulls10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabird_gulls cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds_N,FALSE,2,[ z b ],tracer,mg N m-3,Seabirds total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Seabirds1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Seabirds cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Seabirds1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Seabirds cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Seabirds10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Seabirds cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions_N,FALSE,2,[ z b ],tracer,mg N m-3,Sealions total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Sealions1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Sealions cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Sealions1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Sealions cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Sealions10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Sealions cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals_N,FALSE,2,[ z b ],tracer,mg N m-3,Harbor_seals total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Harbor_seals1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_seals cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_seals1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_seals cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_seals10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_seals cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise_N,FALSE,2,[ z b ],tracer,mg N m-3,Harbor_porpoise total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Harbor_porpoise1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Harbor_porpoise cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Harbor_porpoise1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Harbor_porpoise cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Harbor_porpoise10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Harbor_porpoise cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident_N,FALSE,2,[ z b ],tracer,mg N m-3,Orcas_resident total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Orcas_resident1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_resident cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_resident1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_resident cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_resident10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_resident cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient_N,FALSE,2,[ z b ],tracer,mg N m-3,Orcas_transient total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Orcas_transient1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Orcas_transient cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Orcas_transient1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Orcas_transient cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Orcas_transient10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Orcas_transient cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales_N,FALSE,2,[ z b ],tracer,mg N m-3,Humpback_whales total N,0,1,0,0,1,0,0,0,NA,NA,NA,NA,NA,NA,NA,constant,uniform,0,0
+Humpback_whales1_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales2_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales3_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales4_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales5_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales6_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales7_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales8_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales9_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales10_Nums,FALSE,2,[ z b ],tracer,1,Numbers of Humpback_whales cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,custom,surface,0,0
+Humpback_whales1_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales2_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales3_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales4_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales5_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales6_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales7_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales8_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales9_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales10_StructN,FALSE,2,[ z b ],tracer,mg N,Individual structural N for Humpback_whales cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales1_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 1,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales2_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 2,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales3_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 3,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales4_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 4,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales5_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 5,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales6_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 6,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales7_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 7,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales8_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 8,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales9_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 9,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0
+Humpback_whales10_ResN,FALSE,2,[ z b ],tracer,mg N,Individual reserve N for Humpback_whales cohort 10,0,0,0,0,0,0,1,0,0,0,0,10,1000000000,200000000,200000000,constant,uniform,0,0

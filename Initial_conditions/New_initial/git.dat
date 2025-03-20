@@ -1,0 +1,10 @@
+git config --global user.name "Porobic Garate, Javier Porobic (O&A, Hobart)"
+git config --global user.email "Javier.Porobicgarate@csiro.au"
+
+
+cd existing-project
+git init
+git add --all
+git commit -m "Initial Commit"
+git remote add origin https://bitbucket.csiro.au/scm/~por07g/salish-sea-atlantis-model.git
+git push -u origin master

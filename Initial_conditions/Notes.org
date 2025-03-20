@@ -1,0 +1,20 @@
+
+* Initial condition
+ - Reduce dimentions
+   - The origianl file from Heidi had t = 7 ans should be t = 1.
+     This problem was originated using ncgen. The original ncf file had several mistakes in the number of rows and dimension. This created a problem during the creation of the .nc file. Therefore was necesary to clean the file to find the mistakes.
+   - How:
+#+BEGIN_SRC sh
+ ncks -d t,0 SalishSea_InitCond_12082019.nc SalishSea_InitCond_12082019t1.nc
+#+END_SRC
+- By hand was necesary to track down the extra spaces and character included the cdf file
+- New version fo the initial condition file is called FIXED_OLD_SalishSea_InitCond_12082019.nc.
+
+** Creating new initial codnition file
+- Extracting information from the old init file
+  - FIXED_OLD_SalishSea_InitCond_12082019.nc
+- Creatting templated for the horizontal information and the general info
+  - This can be done by hand, this will minimize the Human error of creating a cdf file by hand
+- The information of concentration of SZO,  MZO,  POM and DON was made using the convertion for nitrogen using the molecular farmula
+  - 1 moles Nitrogen is equal to 14.0067 grams of nitrogen
+  - 1 micromoles Nitrogen is equal to 0.0140067 grams

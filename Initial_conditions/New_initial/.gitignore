@@ -1,0 +1,14 @@
+# File Removed from the github #
+##----------------------------##
+/Inputs/Forcing_Hydro/*
+Inputs/Forcing_Hydro/JFRE_hydro.nc
+/JFR_Output_Folder/*
+/JFR_Output_Folder_Effort/*
+/JFR_Output_Folder_H/*
+/Calibration/*
+/Inputs/Forcings/*
+/MandM/FG_connect.nc
+Inputs/Larval_disp/Burn.nc
+Inputs/Larval_disp/FG_connect_Burn.nc
+Inputs/Larval_disp/old_FG_connect.nc
+MandM/.#Methods.org

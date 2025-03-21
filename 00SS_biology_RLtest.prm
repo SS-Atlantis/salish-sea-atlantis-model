@@ -11663,21 +11663,24 @@ HCO_aquacult_fry 0.0
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 ## -- Contaminants Parameters-- ##
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
-flag_dissolved_pollutants  0     Whether the contaminants are dissolved and transmitted in excretion (1) or not (0)
+flag_dissolved_pollutants  1     Whether the contaminants are dissolved and transmitted in excretion (1) or not (0)
 flag_contamMortModel       1     Simple model from Laender et al 2008 (1) or compound model from InVitro (0)
 flag_contamInteractModel   2     No contaminant interactions (0), Additive interactions (1), Multiplicative interactions (2), Most limiting contaminant dominates (3)
 flag_contamGrowthModel     2     No growth effects of contaminants (0), InVitro representation (1), logistic model (2)
 flag_contamMove            0     Flag indicating avoidance scalar used - 0 = none, 1 = knife-edge, 2 = sigmoidal, 3 = left shoulder flat top
 flag_contamOnlyAmplify     1     Whether the interacting contaminants can only amplify (1) or can buffer/negate each other too (0)
 flag_contamMinTemp         1.0   Minimum temperature to consider in contaminants relationships that involve temperature corrections
+flag_detritus_contam       0     Flag indicating whether contaminant uptake from consuming detritus is allowed (1) or not (0)
+flag_contam_halflife_spbased    0     Set to 1 for species-specific half life, or 0 to use the contaminant decay half life
 
+contam_sig_uptake_const 0.95    ## The constant in the Richards sigmoidal uptake formula
 biopools_dodge_contam 0
 # Coefficient indicating degree of dissolubility of the material
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
-Naphthalene_dissolv_coefft 0
-Phenanthrene_dissolv_coefft 0
-Pyrene_dissolv_coefft 0
-Benzo_dissolv_coefft 0
+Naphthalene_dissolv_coefft 1
+Phenanthrene_dissolv_coefft 1
+Pyrene_dissolv_coefft 1
+Benzo_dissolv_coefft 1
 
 # Half life in seconds
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
@@ -11692,6 +11695,13 @@ Naphthalene_temp_depend 1
 Phenanthrene_temp_depend 1
 Pyrene_temp_depend 1
 Benzo_temp_depend 1
+
+# When using the concentration based closures then the trheshold level for each contaminant is required
+## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+Naphthalene_fishery_thresh_level 1000000.0
+Phenanthrene_fishery_thresh_level 1000000.0
+Pyrene_fishery_thresh_level 1000000.0
+Benzo_fishery_thresh_level 1000000.0
 
 contam_tau 0.11
 
@@ -11922,7 +11932,7 @@ PB_Benzo_uptake_option 1
 BB_Benzo_uptake_option 1
 BO_Benzo_uptake_option 1
 
-## Rates of uptake - in mg/m^3 per second.
+## Rates of uptake - in per day.
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 FHE_Naphthalene_uptake_rate 1.0e-09
 FPS_Naphthalene_uptake_rate 1.0e-09
@@ -12147,6 +12157,232 @@ ZS_Benzo_uptake_rate 8.0e-04
 PB_Benzo_uptake_rate 8.0e-05
 BB_Benzo_uptake_rate 8.0e-05
 BO_Benzo_uptake_rate 8.0e-05
+
+## Group-specific half-life via metabolism
+## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+FHE_Naphthalene_decay_half_life 259200
+FPS_Naphthalene_decay_half_life 259200
+FSA_Naphthalene_decay_half_life 259200
+FCH_Naphthalene_decay_half_life 259200
+FCO_Naphthalene_decay_half_life 259200
+FSS_Naphthalene_decay_half_life 259200
+FPI_Naphthalene_decay_half_life 259200
+FCU_Naphthalene_decay_half_life 259200
+FSO_Naphthalene_decay_half_life 259200
+HCH_Naphthalene_decay_half_life 259200
+HCO_Naphthalene_decay_half_life 259200
+HSS_Naphthalene_decay_half_life 259200
+FHK_Naphthalene_decay_half_life 259200
+FPO_Naphthalene_decay_half_life 259200
+FLC_Naphthalene_decay_half_life 259200
+FBP_Naphthalene_decay_half_life 259200
+FDS_Naphthalene_decay_half_life 259200
+FDL_Naphthalene_decay_half_life 259200
+FRO_Naphthalene_decay_half_life 259200
+FFS_Naphthalene_decay_half_life 259200
+FFL_Naphthalene_decay_half_life 259200
+SHD_Naphthalene_decay_half_life 259200
+SHS_Naphthalene_decay_half_life 259200
+SRA_Naphthalene_decay_half_life 259200
+SSK_Naphthalene_decay_half_life 259200
+SB_Naphthalene_decay_half_life 259200
+SP_Naphthalene_decay_half_life 259200
+CSL_Naphthalene_decay_half_life 259200
+HSL_Naphthalene_decay_half_life 259200
+PHR_Naphthalene_decay_half_life 259200
+ORR_Naphthalene_decay_half_life 259200
+ORT_Naphthalene_decay_half_life 259200
+WHB_Naphthalene_decay_half_life 259200
+BRL_Naphthalene_decay_half_life 259200
+DCR_Naphthalene_decay_half_life 259200
+BIV_Naphthalene_decay_half_life 259200
+CEP_Naphthalene_decay_half_life 259200
+BFF_Naphthalene_decay_half_life 259200
+SPH_Naphthalene_decay_half_life 259200
+BG_Naphthalene_decay_half_life 259200
+BMD_Naphthalene_decay_half_life 259200
+PWN_Naphthalene_decay_half_life 259200
+BD_Naphthalene_decay_half_life 259200
+BC_Naphthalene_decay_half_life 259200
+MA_Naphthalene_decay_half_life 259200
+SG_Naphthalene_decay_half_life 259200
+ZG_Naphthalene_decay_half_life 259200
+PL_Naphthalene_decay_half_life 259200
+PS_Naphthalene_decay_half_life 259200
+ZL_Naphthalene_decay_half_life 259200
+ZM_Naphthalene_decay_half_life 259200
+ZS_Naphthalene_decay_half_life 259200
+PB_Naphthalene_decay_half_life 259200
+BB_Naphthalene_decay_half_life 259200
+BO_Naphthalene_decay_half_life 259200
+
+FHE_Phenanthrene_decay_half_life 3628800
+FPS_Phenanthrene_decay_half_life 3628800
+FSA_Phenanthrene_decay_half_life 3628800
+FCH_Phenanthrene_decay_half_life 3628800
+FCO_Phenanthrene_decay_half_life 3628800
+FSS_Phenanthrene_decay_half_life 3628800
+FPI_Phenanthrene_decay_half_life 3628800
+FCU_Phenanthrene_decay_half_life 3628800
+FSO_Phenanthrene_decay_half_life 3628800
+HCH_Phenanthrene_decay_half_life 3628800
+HCO_Phenanthrene_decay_half_life 3628800
+HSS_Phenanthrene_decay_half_life 3628800
+FHK_Phenanthrene_decay_half_life 3628800
+FPO_Phenanthrene_decay_half_life 3628800
+FLC_Phenanthrene_decay_half_life 3628800
+FBP_Phenanthrene_decay_half_life 3628800
+FDS_Phenanthrene_decay_half_life 3628800
+FDL_Phenanthrene_decay_half_life 3628800
+FRO_Phenanthrene_decay_half_life 3628800
+FFS_Phenanthrene_decay_half_life 3628800
+FFL_Phenanthrene_decay_half_life 3628800
+SHD_Phenanthrene_decay_half_life 3628800
+SHS_Phenanthrene_decay_half_life 3628800
+SRA_Phenanthrene_decay_half_life 3628800
+SSK_Phenanthrene_decay_half_life 3628800
+SB_Phenanthrene_decay_half_life 3628800
+SP_Phenanthrene_decay_half_life 3628800
+CSL_Phenanthrene_decay_half_life 3628800
+HSL_Phenanthrene_decay_half_life 3628800
+PHR_Phenanthrene_decay_half_life 3628800
+ORR_Phenanthrene_decay_half_life 3628800
+ORT_Phenanthrene_decay_half_life 3628800
+WHB_Phenanthrene_decay_half_life 3628800
+BRL_Phenanthrene_decay_half_life 3628800
+DCR_Phenanthrene_decay_half_life 3628800
+BIV_Phenanthrene_decay_half_life 3628800
+CEP_Phenanthrene_decay_half_life 3628800
+BFF_Phenanthrene_decay_half_life 3628800
+SPH_Phenanthrene_decay_half_life 3628800
+BG_Phenanthrene_decay_half_life 3628800
+BMD_Phenanthrene_decay_half_life 3628800
+PWN_Phenanthrene_decay_half_life 3628800
+BD_Phenanthrene_decay_half_life 3628800
+BC_Phenanthrene_decay_half_life 3628800
+MA_Phenanthrene_decay_half_life 3628800
+SG_Phenanthrene_decay_half_life 3628800
+ZG_Phenanthrene_decay_half_life 3628800
+PL_Phenanthrene_decay_half_life 3628800
+PS_Phenanthrene_decay_half_life 3628800
+ZL_Phenanthrene_decay_half_life 3628800
+ZM_Phenanthrene_decay_half_life 3628800
+ZS_Phenanthrene_decay_half_life 3628800
+PB_Phenanthrene_decay_half_life 3628800
+BB_Phenanthrene_decay_half_life 3628800
+BO_Phenanthrene_decay_half_life 3628800
+
+FHE_Pyrene_decay_half_life 20476800
+FPS_Pyrene_decay_half_life 20476800
+FSA_Pyrene_decay_half_life 20476800
+FCH_Pyrene_decay_half_life 20476800
+FCO_Pyrene_decay_half_life 20476800
+FSS_Pyrene_decay_half_life 20476800
+FPI_Pyrene_decay_half_life 20476800
+FCU_Pyrene_decay_half_life 20476800
+FSO_Pyrene_decay_half_life 20476800
+HCH_Pyrene_decay_half_life 20476800
+HCO_Pyrene_decay_half_life 20476800
+HSS_Pyrene_decay_half_life 20476800
+FHK_Pyrene_decay_half_life 20476800
+FPO_Pyrene_decay_half_life 20476800
+FLC_Pyrene_decay_half_life 20476800
+FBP_Pyrene_decay_half_life 20476800
+FDS_Pyrene_decay_half_life 20476800
+FDL_Pyrene_decay_half_life 20476800
+FRO_Pyrene_decay_half_life 20476800
+FFS_Pyrene_decay_half_life 20476800
+FFL_Pyrene_decay_half_life 20476800
+SHD_Pyrene_decay_half_life 20476800
+SHS_Pyrene_decay_half_life 20476800
+SRA_Pyrene_decay_half_life 20476800
+SSK_Pyrene_decay_half_life 20476800
+SB_Pyrene_decay_half_life 20476800
+SP_Pyrene_decay_half_life 20476800
+CSL_Pyrene_decay_half_life 20476800
+HSL_Pyrene_decay_half_life 20476800
+PHR_Pyrene_decay_half_life 20476800
+ORR_Pyrene_decay_half_life 20476800
+ORT_Pyrene_decay_half_life 20476800
+WHB_Pyrene_decay_half_life 20476800
+BRL_Pyrene_decay_half_life 20476800
+DCR_Pyrene_decay_half_life 20476800
+BIV_Pyrene_decay_half_life 20476800
+CEP_Pyrene_decay_half_life 20476800
+BFF_Pyrene_decay_half_life 20476800
+SPH_Pyrene_decay_half_life 20476800
+BG_Pyrene_decay_half_life 20476800
+BMD_Pyrene_decay_half_life 20476800
+PWN_Pyrene_decay_half_life 20476800
+BD_Pyrene_decay_half_life 20476800
+BC_Pyrene_decay_half_life 20476800
+MA_Pyrene_decay_half_life 20476800
+SG_Pyrene_decay_half_life 20476800
+ZG_Pyrene_decay_half_life 20476800
+PL_Pyrene_decay_half_life 20476800
+PS_Pyrene_decay_half_life 20476800
+ZL_Pyrene_decay_half_life 20476800
+ZM_Pyrene_decay_half_life 20476800
+ZS_Pyrene_decay_half_life 20476800
+PB_Pyrene_decay_half_life 20476800
+BB_Pyrene_decay_half_life 20476800
+BO_Pyrene_decay_half_life 20476800
+
+FHE_Benzo_decay_half_life 19353600
+FPS_Benzo_decay_half_life 19353600
+FSA_Benzo_decay_half_life 19353600
+FCH_Benzo_decay_half_life 19353600
+FCO_Benzo_decay_half_life 19353600
+FSS_Benzo_decay_half_life 19353600
+FPI_Benzo_decay_half_life 19353600
+FCU_Benzo_decay_half_life 19353600
+FSO_Benzo_decay_half_life 19353600
+HCH_Benzo_decay_half_life 19353600
+HCO_Benzo_decay_half_life 19353600
+HSS_Benzo_decay_half_life 19353600
+FHK_Benzo_decay_half_life 19353600
+FPO_Benzo_decay_half_life 19353600
+FLC_Benzo_decay_half_life 19353600
+FBP_Benzo_decay_half_life 19353600
+FDS_Benzo_decay_half_life 19353600
+FDL_Benzo_decay_half_life 19353600
+FRO_Benzo_decay_half_life 19353600
+FFS_Benzo_decay_half_life 19353600
+FFL_Benzo_decay_half_life 19353600
+SHD_Benzo_decay_half_life 19353600
+SHS_Benzo_decay_half_life 19353600
+SRA_Benzo_decay_half_life 19353600
+SSK_Benzo_decay_half_life 19353600
+SB_Benzo_decay_half_life 19353600
+SP_Benzo_decay_half_life 19353600
+CSL_Benzo_decay_half_life 19353600
+HSL_Benzo_decay_half_life 19353600
+PHR_Benzo_decay_half_life 19353600
+ORR_Benzo_decay_half_life 19353600
+ORT_Benzo_decay_half_life 19353600
+WHB_Benzo_decay_half_life 19353600
+BRL_Benzo_decay_half_life 19353600
+DCR_Benzo_decay_half_life 19353600
+BIV_Benzo_decay_half_life 19353600
+CEP_Benzo_decay_half_life 19353600
+BFF_Benzo_decay_half_life 19353600
+SPH_Benzo_decay_half_life 19353600
+BG_Benzo_decay_half_life 19353600
+BMD_Benzo_decay_half_life 19353600
+PWN_Benzo_decay_half_life 19353600
+BD_Benzo_decay_half_life 19353600
+BC_Benzo_decay_half_life 19353600
+MA_Benzo_decay_half_life 19353600
+SG_Benzo_decay_half_life 19353600
+ZG_Benzo_decay_half_life 19353600
+PL_Benzo_decay_half_life 19353600
+PS_Benzo_decay_half_life 19353600
+ZL_Benzo_decay_half_life 19353600
+ZM_Benzo_decay_half_life 19353600
+ZS_Benzo_decay_half_life 19353600
+PB_Benzo_decay_half_life 19353600
+BB_Benzo_decay_half_life 19353600
+BO_Benzo_decay_half_life 19353600
 
 ## Instant dose contact mortality rate
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
@@ -12601,7 +12837,7 @@ PB_Benzo_TimeToLD50 34560
 BB_Benzo_TimeToLD50 34560
 BO_Benzo_TimeToLD50 34560
 
-## Concentration  that will kill 50% of the population after TimeToLD50 seconds
+## Concentration (mg/m3) that will kill 50% of the population after TimeToLD50 seconds
 ## Really LC50 not LD50
 ## units as defined in run.prm
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #

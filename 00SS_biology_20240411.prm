@@ -8308,7 +8308,7 @@ KLYS_SG 0.03      #  Lysis rate of seagrass     d-1 (0.01)       0.01#
 mL3_SG_T15 0   Linear mortality of seagrass epiphytes, 15 deg C d-1
 
 # Linear mortality biomass groups calculated as a weighted average rate as usual
-PL_mL        0.0000002        #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
+PL_mL        0.0000002    #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
 PS_mL        0.0001       #Linear mortality rate of picophytopl, 15 deg C    d-1              0.14
 MA_mL        0.0005       #Linear mortality rate of macroalgae, 15 deg C     d-1              0.002 - 0.04
 SG_mL        0.002        #Linear mortality rate of seagrass, 15 deg C       d-1              0.001 - 0.01

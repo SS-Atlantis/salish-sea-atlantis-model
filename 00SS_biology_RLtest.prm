@@ -117,7 +117,7 @@ flag_predratiodepend 0
 flagconstrain_epiwander  0
 
 flaglight       0    Light adaptation: 1 = on, 0 = off 1
-flaglightopt    3    Light model: 0=orig, 1=bottom, 2=top, 3=mid-depth of cell 3
+flaglightopt    2    Light model: 0=orig, 1=bottom, 2=top, 3=mid-depth of cell 3
 lim_sun_hours   13   # ** 15hr - summer; 9hr winter Whether using limted hours of sun oer day or the default assumption of half the day is "day"
 swr_scalar      0.45
 swr_const       1367.0
@@ -3091,10 +3091,10 @@ min_channel_depth 0.001  Minimum depth of estuarine channels
 MB_wc            0.01       Scalar for microphytoben. growth in wc (reduced as not on substrate) 0.1
 
 # Primary producer light requirements
-KI_PL_T15  15   Light saturation, large phytoplankton W m-2 10 - 20
-KI_PS_T15  15   Light saturation, small phytoplankton W m-2 10 - 20
-KI_MA_T15  20    Light saturation, macroalgae W m-2 5
-KI_SG_T15  35   Light saturation, seagrass W m-2 65
+KI_PL_T15  20   Light saturation, large phytoplankton W m-2 10 - 20
+KI_PS_T15  10   Light saturation, small phytoplankton W m-2 10 - 20
+KI_MA_T15  20    Light saturation, macroalgae W m-2 5 AMPS = 3
+KI_SG_T15  35   Light saturation, seagrass W m-2 65 AMPS = 20
 KI_MB_T15  3  Light saturation, microphytobenthos W m-2 3
 
 eddy_scale  1  Coefficient scaling eddy strength impact on phytoplankton growth 1
@@ -7294,7 +7294,7 @@ C_WHB            10
 
 
 # Primary producer growth
-mum_PL_T15  0.5  ## Maximum growth rate, large phytoplankton d-1 1 - 1.7
+mum_PL_T15  1.3  ## Maximum growth rate, large phytoplankton d-1 1 - 1.7
 mum_PS_T15  0.7     ## Maximum growth rate, small (pico) phytoplankton d-1 1 - 1.24
 mum_MA_T15  0.07   ## Maximum growth rate, macroalgae d-1 0.1  (0.15)
 mum_SG_T15  0.03    ## Maximum growth rate, seagrass d-1 0.05-0.15
@@ -7419,7 +7419,7 @@ mum_ORR          10
 mum_WHB          10
 1053631.3 1127206.24 3328640.77 459393.49 412190.65 318360.08 320050.12 354690.84 357847.8 360251.57
 
-# Half saturation LOWER threshold for availabiality (mg N m-3): This is used by min-max feeding (predcase 4).
+# Half saturation LOWER threshold for availability (mg N m-3): This is used by min-max feeding (predcase 4).
 # SP_PREDATOR, only for predcase 4 (THUS NOT USED - as predcase's all set to 0 (type II feeding) - values taken from AMS/GAB models
 KL_ZG   20    Half saturation density of
 KL_ZL   20
@@ -8300,7 +8300,7 @@ Ktmp_bird 0.08 Factor relating temperature to respiration for seabirds 0.08
 Ktmp_mammal 0.08 Factor relating temperature to respiration for mammals 0.08
 
 # Lysis rate of microalgaes
-KLYS_PL 0.00000015    # Lysis rate of diatoms d-1 0.0001#
+KLYS_PL 0.02    # Lysis rate of diatoms d-1 0.0001#
 KLYS_PS 0.01    #  Lysis rate of picophytoplankton d-1 -0.01 0.01#
 KLYS_MA 0.02      #  Lysis rate of macroalgaes  d-1 (0.01)       0.01#
 KLYS_SG 0.03      #  Lysis rate of seagrass     d-1 (0.01)       0.01#
@@ -8308,7 +8308,7 @@ KLYS_SG 0.03      #  Lysis rate of seagrass     d-1 (0.01)       0.01#
 mL3_SG_T15 0   Linear mortality of seagrass epiphytes, 15 deg C d-1
 
 # Linear mortality biomass groups calculated as a weighted average rate as usual
-PL_mL        0.0000002        #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
+PL_mL        0.0002        #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
 PS_mL        0.0001       #Linear mortality rate of picophytopl, 15 deg C    d-1              0.14
 MA_mL        0.0005       #Linear mortality rate of macroalgae, 15 deg C     d-1              0.002 - 0.04
 SG_mL        0.002        #Linear mortality rate of seagrass, 15 deg C       d-1              0.001 - 0.01

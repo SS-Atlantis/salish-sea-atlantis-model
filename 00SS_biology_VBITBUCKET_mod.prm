@@ -1612,7 +1612,7 @@ k_w_shallow  0.03  Coefficient of background light absorption due to coastal wat
 k_PN         0.0035  Coefficient of light absorption due to particulate matter 0.0035
 k_SED        0.05      Coefficient of light absoption due to sediment. Only used if flagIsEstuary is on.
 k_DON        0.0009  Coefficient of light absorption due DON 0.0009
-k_DL         0.00038  Coefficient of light absorption due to labile detritus 0.0038
+k_DL         0.0038  Coefficient of light absorption due to labile detritus 0.0038
 k_IS         0.05  Basic coefficient of light absorption 0.05
 KIOP_min     4  Minimum level of light adaptation 4
 KIOP_shift   0.25  Minimum rate of shift under light adaptation 0.25
@@ -7296,8 +7296,8 @@ C_WHB            10
 # Primary producer growth
 mum_PL_T15  0.9  ## Maximum growth rate, large phytoplankton d-1 1 - 1.7
 mum_PS_T15  0.6     ## Maximum growth rate, small (pico) phytoplankton d-1 1 - 1.24
-mum_MA_T15  0.15   ## Maximum growth rate, macroalgae d-1 0.1  (0.15)
-mum_SG_T15  0.15    ## Maximum growth rate, seagrass d-1 0.05-0.15
+mum_MA_T15  0.07   ## Maximum growth rate, macroalgae d-1 0.1  (0.15)
+mum_SG_T15  0.03    ## Maximum growth rate, seagrass d-1 0.05-0.15
 
 # Consumer growth - this is used by Holling type feeding (predcase 0, 1, 2)  INTAKE = C X PREY / 1 + C * E/mum * prey (mg N m3); bigger mum - faster handling time - higher growth.
 mum_ZG_T15  0.2  ## Growth rate of gelatinous zooplankton mg N d-1 0.02 - 0.35   (0.05)
@@ -8315,7 +8315,7 @@ SG_mL        0.002        #Linear mortality rate of seagrass, 15 deg C       d-1
 ZG_mL 0.00455
 ZL_mL        0.00028       #Linear mortality rate of large zoopl, 15 deg C    d-1 (0.001)      0.0 - 0.04
 ZM_mL        0.02        #Linear mortality rate of meso-zoopl, 15 deg C     d-1 (0.001)      0.0 - 0.09
-ZS_mL 0.3
+ZS_mL 0.03
 BFF_mL       0.0000005     #Linear mortality rate of shallow ff, 15 deg C     d-1 (0.000001)   0.0 -  0.001
 BIV_mL       0.0000015     #Linear mortality rate of deep filt feed, 15 deg C d-1 (0.000001)   0.0 -  0.001
 BD_mL        0.0005        #Linear mortality rate of deposit feeder, 15 deg C d-1 (0.0005)     0.0 -  0.001

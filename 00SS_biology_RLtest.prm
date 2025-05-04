@@ -117,7 +117,7 @@ flag_predratiodepend 0
 flagconstrain_epiwander  0
 
 flaglight       0    Light adaptation: 1 = on, 0 = off 1
-flaglightopt    2    Light model: 0=orig, 1=bottom, 2=top, 3=mid-depth of cell 3
+flaglightopt    3    Light model: 0=orig, 1=bottom, 2=top, 3=mid-depth of cell 3
 lim_sun_hours   13   # ** 15hr - summer; 9hr winter Whether using limted hours of sun oer day or the default assumption of half the day is "day"
 swr_scalar      0.45
 swr_const       1367.0
@@ -135,24 +135,24 @@ flagdemZG  0  ZG: 1 = on, 0 = off 1
 flagdemZL  0  ZL: 1 = on, 0 = off 1
 flagdemZM  0  ZM: 1 = on, 0 = off 1
 flagdemZS  0  ZS: 1 = on, 0 = off 1
-flagdemHCH 1  FPS: 1 = on, 0 = off 1
-flagdemHCO 1  FPS: 1 = on, 0 = off 1
+flagdemHCH 0  FPS: 1 = on, 0 = off 1
+flagdemHCO 0  FPS: 1 = on, 0 = off 1
 flagdemFPS 0  FPS: 1 = on, 0 = off 1
-flagdemFSA 0  FSA: 1 = on, 0 = off 1
+flagdemFSA 1  FSA: 1 = on, 0 = off 1
 flagdemFHE 0  FHE: 1 = on, 0 = off 1
 flagdemFHK 0  FHK: 1 = on, 0 = off 1
 flagdemFPO  1  FPO: 1 = on, 0 = off 1
 flagdemFCH  0  FCH: 1 = on, 0 = off 1
 flagdemFCO  0  FCO: 1 = on, 0 = off 1
-flagdemFFS  0  FFS: 1 = on, 0 = off 1
-flagdemFFL  0  FFL: 1 = on, 0 = off 1
+flagdemFFS  1  FFS: 1 = on, 0 = off 1
+flagdemFFL  1  FFL: 1 = on, 0 = off 1
 flagdemFSS  0  FSS: 1 = on, 0 = off 1
 flagdemFPI  0  FPI: 1 = on, 0 = off 1
 flagdemFDL  1  FDL: 1 = on, 0 = off 1
 flagdemFLC  1  FLC: 1 = on, 0 = off 1
-flagdemFSO  1  FSO: 1 = on, 0 = off 1
+flagdemFSO  0  FSO: 1 = on, 0 = off 1
 flagdemFDS  1  FDS: 1 = on, 0 = off 1
-flagdemFCU  1  FCU: 1 = on, 0 = off 1
+flagdemFCU  0  FCU: 1 = on, 0 = off 1
 flagdemFRO  1  FSO: 1 = on, 0 = off 1
 flagdemSHD  1  SHD: 1 = on, 0 = off 1
 flagdemFBP  0  FBP: 1 = on, 0 = off 1
@@ -336,17 +336,17 @@ flagext_reprodFSA 0  0
 flagext_reprodFHE 0  0
 flagext_reprodFPO 0  0
 flagext_reprodFFS 0  0
-flagext_reprodFCH 0  0
+flagext_reprodFCH 1  0
 flagext_reprodFCO 1  0
-flagext_reprodFSS 0  0
-flagext_reprodFPI 0  0
-flagext_reprodFCU 0  0
+flagext_reprodFSS 1  0
+flagext_reprodFPI 1  0
+flagext_reprodFCU 1  0
 flagext_reprodFFL 0  0
 flagext_reprodFDL 0  0
 flagext_reprodFLC 0  0
 flagext_reprodFDS 0  0
 flagext_reprodFRO 0  0
-flagext_reprodFSO 0  0
+flagext_reprodFSO 1  0
 flagext_reprodSHD 0  0
 flagext_reprodFBP 0  0
 flagext_reprodSRA 0  0
@@ -416,24 +416,24 @@ flagrecpeakPRW  1 1
 flaglocalrecruitHCH 0
 flaglocalrecruitHCO 0
 flaglocalrecruitHSS 0
-flaglocalrecruitFPS 0
-flaglocalrecruitFHK 0
-flaglocalrecruitFSA 0
-flaglocalrecruitFHE 0
-flaglocalrecruitFPO 0
-flaglocalrecruitFFS 0
-flaglocalrecruitFCH 0
-flaglocalrecruitFCO 0
-flaglocalrecruitFSS 0
-flaglocalrecruitFPI 0
-flaglocalrecruitFFL 0
-flaglocalrecruitFRO 0
-flaglocalrecruitFDL 0
-flaglocalrecruitFLC 0
-flaglocalrecruitFDS 0
-flaglocalrecruitFCU 0
+flaglocalrecruitFPS 1
+flaglocalrecruitFHK 1
+flaglocalrecruitFSA 1
+flaglocalrecruitFHE 1
+flaglocalrecruitFPO 1
+flaglocalrecruitFFS 1
+flaglocalrecruitFCH 1
+flaglocalrecruitFCO 1
+flaglocalrecruitFSS 1
+flaglocalrecruitFPI 1
+flaglocalrecruitFFL 1
+flaglocalrecruitFRO 1
+flaglocalrecruitFDL 1
+flaglocalrecruitFLC 1
+flaglocalrecruitFDS 1
+flaglocalrecruitFCU 1
 flaglocalrecruitFWT 0
-flaglocalrecruitFSO 0
+flaglocalrecruitFSO 1
 flaglocalrecruitFDT 1
 flaglocalrecruitFST 0
 flaglocalrecruitFDM 0
@@ -449,7 +449,7 @@ flaglocalrecruitHSL 1
 #flaglocalrecruitSFL 1
 flaglocalrecruitCSL  1
 flaglocalrecruitWHB 1
-flaglocalrecruitORT 1
+flaglocalrecruitORT 2
 flaglocalrecruitPHR 1
 flaglocalrecruitORR 1
 
@@ -713,65 +713,65 @@ flagq10receffPHR 0
 flagq10receffORR 0
 
 # Temperature sensitivty of vertebrates and CEP, PWN: 0 = no, 1 = yes (Heavisde), 2 = bilogistic, 3: flat topped parallelogram shap
-flagtempsensitiveHCH 2
-flagtempsensitiveHCO 2
-flagtempsensitiveFPS 2
-flagtempsensitiveFHK 2
-flagtempsensitiveFSA 2
-flagtempsensitiveFHE 2
-flagtempsensitiveFPO 2
-flagtempsensitiveFFS 2
-flagtempsensitiveFCH 2
-flagtempsensitiveFCO 2
-flagtempsensitiveFSS 2
-flagtempsensitiveFPI 2
-flagtempsensitiveFFL 2
-flagtempsensitiveFCU 2
-flagtempsensitiveFRO 2
-flagtempsensitiveFDL 2
-flagtempsensitiveFDS 2
-flagtempsensitiveFLC 2
-flagtempsensitiveFSO 2
-flagtempsensitiveSHD 2
-flagtempsensitiveFBP 2
-flagtempsensitiveSRA 2
-flagtempsensitiveSHS 2
-flagtempsensitiveSSK 2
-flagtempsensitiveHSS 2
-flagtempsensitiveSB 2
-flagtempsensitiveSP 2
-flagtempsensitiveSBP 2
-flagtempsensitiveSPH 2
-flagtempsensitiveBGA 2
-flagtempsensitiveBRL 2
-flagtempsensitiveDCR 2
-flagtempsensitiveHSL 2
-flagtempsensitiveSFL 2
-flagtempsensitiveCSL  2
-flagtempsensitiveWHB 2
-flagtempsensitiveORT 2
-flagtempsensitivePHR 2
-flagtempsensitiveORR 2
+flagtempsensitiveHCH 1
+flagtempsensitiveHCO 1
+flagtempsensitiveFPS 1
+flagtempsensitiveFHK 1
+flagtempsensitiveFSA 1
+flagtempsensitiveFHE 1
+flagtempsensitiveFPO 1
+flagtempsensitiveFFS 1
+flagtempsensitiveFCH 1
+flagtempsensitiveFCO 1
+flagtempsensitiveFSS 1
+flagtempsensitiveFPI 1
+flagtempsensitiveFFL 1
+flagtempsensitiveFCU 1
+flagtempsensitiveFRO 1
+flagtempsensitiveFDL 1
+flagtempsensitiveFDS 1
+flagtempsensitiveFLC 1
+flagtempsensitiveFSO 1
+flagtempsensitiveSHD 1
+flagtempsensitiveFBP 1
+flagtempsensitiveSRA 1
+flagtempsensitiveSHS 1
+flagtempsensitiveSSK 1
+flagtempsensitiveHSS 1
+flagtempsensitiveSB 1
+flagtempsensitiveSP 1
+flagtempsensitiveSBP 1
+flagtempsensitiveSPH 1
+flagtempsensitiveBGA 1
+flagtempsensitiveBRL 1
+flagtempsensitiveDCR 1
+flagtempsensitiveHSL 1
+flagtempsensitiveSFL 1
+flagtempsensitiveCSL  1
+flagtempsensitiveWHB 1
+flagtempsensitiveORT 1
+flagtempsensitivePHR 1
+flagtempsensitiveORR 1
 
-flagtempsensitiveCEP 2
-flagtempsensitivePWN 2
-flagtempsensitiveBFF 2
-flagtempsensitiveBIV 2
-flagtempsensitiveBG 2
-flagtempsensitiveBMD 2
-flagtempsensitiveBD 2
-flagtempsensitiveBC 2
-flagtempsensitiveMA 2
-flagtempsensitiveSG 2
-flagtempsensitiveZG 2
-flagtempsensitiveZL 2
-flagtempsensitiveZM 2
-flagtempsensitiveZS 2
-flagtempsensitivePL 2
-flagtempsensitivePS 2
-flagtempsensitivePB 2
-flagtempsensitiveBB 2
-flagtempsensitiveBO 2
+flagtempsensitiveCEP 1
+flagtempsensitivePWN 1
+flagtempsensitiveBFF 1
+flagtempsensitiveBIV 1
+flagtempsensitiveBG 1
+flagtempsensitiveBMD 1
+flagtempsensitiveBD 1
+flagtempsensitiveBC 1
+flagtempsensitiveMA 1
+flagtempsensitiveSG 1
+flagtempsensitiveZG 1
+flagtempsensitiveZL 1
+flagtempsensitiveZM 1
+flagtempsensitiveZS 1
+flagtempsensitivePL 1
+flagtempsensitivePS 1
+flagtempsensitivePB 1
+flagtempsensitiveBB 1
+flagtempsensitiveBO 1
 
 ## Habitat dependency
 flag_benthos_sediment_link 0  flag indicating whether growth of benthos is scaled based on bottom types (1) or not (0)
@@ -846,20 +846,20 @@ flagsaltdepend   1         0 = off, 1 = salinity preferences used
 flagO2depend     1         0 = off, 1 = oxygen preferences used
 
 # Minimum and maximum tolerated temperatures
-HCH_min_move_temp 2.0
-HCO_min_move_temp 2.0
+HCH_min_move_temp -0.6
+HCO_min_move_temp -0.6
 FPS_min_move_temp 2.0
 FHK_min_move_temp 2.0
-FHE_min_move_temp 2.0
+FHE_min_move_temp -1.18
 FSA_min_move_temp 2.0
 FPO_min_move_temp 2.0
 FFS_min_move_temp 2.0
-FCH_min_move_temp 2.0
-FCO_min_move_temp 2.0
-FSS_min_move_temp 2.0
-FPI_min_move_temp 2.0
+FCH_min_move_temp -0.6
+FCO_min_move_temp -0.6
+FSS_min_move_temp -0.41
+FPI_min_move_temp -0.6
 FFL_min_move_temp 2.0
-FCU_min_move_temp 2.0
+FCU_min_move_temp -0.54
 FRO_min_move_temp 2.0
 FDL_min_move_temp 2.0
 FLC_min_move_temp 2.0
@@ -870,7 +870,7 @@ FBP_min_move_temp 2.0
 SRA_min_move_temp 2.0
 SHS_min_move_temp 2.0
 SSK_min_move_temp 2.0
-HSS_min_move_temp 2.0
+HSS_min_move_temp -0.41
 SB_min_move_temp 2.0
 SBP_min_move_temp 2.0
 SP_min_move_temp 2.0
@@ -886,9 +886,9 @@ ORT_min_move_temp 2.0
 PHR_min_move_temp 2.0
 ORR_min_move_temp 2.0
 
-CEP_min_move_temp 2.0
+CEP_min_move_temp 5.86
 BFF_min_move_temp 2.0
-BIV_min_move_temp 2.0
+BIV_min_move_temp -1
 BG_min_move_temp 2.0
 BMD_min_move_temp 2.0
 PWN_min_move_temp 2.0
@@ -896,14 +896,14 @@ BD_min_move_temp 2.0
 BC_min_move_temp 2.0
 MA_min_move_temp 2.0
 SG_min_move_temp 2.0
-ZG_min_move_temp 2.0
+ZG_min_move_temp -1.01
 PL_min_move_temp 2.0
 PS_min_move_temp 2.0
 ZL_min_move_temp 2.0
 ZM_min_move_temp 2.0
 ZS_min_move_temp 2.0
-PB_min_move_temp 2.0
-BB_min_move_temp 2.0
+PB_min_move_temp -1
+BB_min_move_temp -1
 BO_min_move_temp 2.0
 
 SPH_max_move_temp 21.0
@@ -1499,16 +1499,16 @@ flagFHKday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFSAday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFHEday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFPOday  1 Active: 2 = no preference, 1 = day, 0 = night 2
-flagFFSday  1 Active: 2 = no preference, 1 = day, 0 = night 2
+flagFFSday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFCHday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFCOday  1 Active: 2 = no preference, 1 = day, 0 = night 2
-flagFSSday  0 Active: 2 = no preference, 1 = day, 0 = night 2
+flagFSSday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFPIday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFFLday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFCUday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFROday  1 Active: 2 = no preference, 1 = day, 0 = night 2
-flagFDLday  0 Active: 2 = no preference, 1 = day, 0 = night 2
-flagFLCday  0 Active: 2 = no preference, 1 = day, 0 = night 2
+flagFDLday  2 Active: 2 = no preference, 1 = day, 0 = night 2
+flagFLCday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFSOday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagFDSday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagSHDday  2 Active: 2 = no preference, 1 = day, 0 = night 2
@@ -1520,10 +1520,10 @@ flagHSSday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagSBPday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagSPday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagSBday  1 Active: 2 = no preference, 1 = day, 0 = night 2
-flagSPHday  0 Active: 2 = no preference, 1 = day, 0 = night 2
+flagSPHday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBGAday  2 Active: 2 = no preference, 1 = day, 0 = night 2
-flagBRLday  0 Active: 2 = no preference, 1 = day, 0 = night 2
-flagDCRday  0 Active: 2 = no preference, 1 = day, 0 = night 2
+flagBRLday  2 Active: 2 = no preference, 1 = day, 0 = night 2
+flagDCRday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagHSLday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagSFLday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagCSLday   1 Active: 2 = no preference, 1 = day, 0 = night 2
@@ -1536,8 +1536,8 @@ flagBBday   2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBOday   2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBDday   2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBCday   2 Active: 2 = no preference, 1 = day, 0 = night 2
-flagBFFday  0 Active: 2 = no preference, 1 = day, 0 = night 2
-flagBIVday  0 Active: 2 = no preference, 1 = day, 0 = night 2
+flagBFFday  2 Active: 2 = no preference, 1 = day, 0 = night 2
+flagBIVday  2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBGday   2 Active: 2 = no preference, 1 = day, 0 = night 2
 flagBMDday  1 Active: 2 = no preference, 1 = day, 0 = night 2
 flagCEPday  2 Active: 2 = no preference, 1 = day, 0 = night 2
@@ -1612,7 +1612,7 @@ k_w_shallow  0.03  Coefficient of background light absorption due to coastal wat
 k_PN         0.0035  Coefficient of light absorption due to particulate matter 0.0035
 k_SED        0.05      Coefficient of light absoption due to sediment. Only used if flagIsEstuary is on.
 k_DON        0.0009  Coefficient of light absorption due DON 0.0009
-k_DL         0.0038  Coefficient of light absorption due to labile detritus 0.0038
+k_DL         0.00038  Coefficient of light absorption due to labile detritus 0.0038
 k_IS         0.05  Basic coefficient of light absorption 0.05
 KIOP_min     4  Minimum level of light adaptation 4
 KIOP_shift   0.25  Minimum rate of shift under light adaptation 0.25
@@ -3093,8 +3093,8 @@ MB_wc            0.01       Scalar for microphytoben. growth in wc (reduced as n
 # Primary producer light requirements
 KI_PL_T15  20   Light saturation, large phytoplankton W m-2 10 - 20
 KI_PS_T15  10   Light saturation, small phytoplankton W m-2 10 - 20
-KI_MA_T15  20    Light saturation, macroalgae W m-2 5 AMPS = 3
-KI_SG_T15  35   Light saturation, seagrass W m-2 65 AMPS = 20
+KI_MA_T15  10    Light saturation, macroalgae W m-2 5 AMPS = 3
+KI_SG_T15  20   Light saturation, seagrass W m-2 65 AMPS = 20
 KI_MB_T15  3  Light saturation, microphytobenthos W m-2 3
 
 eddy_scale  1  Coefficient scaling eddy strength impact on phytoplankton growth 1
@@ -5133,41 +5133,41 @@ VERTnight_ORR2 6
 
 
 # Swimming speed (m.hr-1)
-Speed_HCH 12500
-Speed_HCO 12500
-Speed_FPS 12500
-Speed_FHK 12500
-Speed_FSA 12500
-Speed_FHE 12500
-Speed_FPO 15000
-Speed_FFS 12500
-Speed_FCH 12500
-Speed_FCO 12500
-Speed_FSS 12500
-Speed_FPI 12500
-Speed_FFL 15000
-Speed_FCU 15000
-Speed_FRO 12500
-Speed_FDL 10000
-Speed_FLC 10000
-Speed_FDS 15000
-Speed_FSO 12500
-Speed_SHD 10000
-Speed_FBP 15000
-Speed_SRA 10000
-Speed_SHS 10000
-Speed_SSK 10000
-Speed_HSS 12500
-Speed_SP 0.05
-Speed_SB 0.05
+Speed_HCH 2000
+Speed_HCO 2000
+Speed_FPS 2000
+Speed_FHK 2000
+Speed_FSA 2000
+Speed_FHE 2000
+Speed_FPO 2000
+Speed_FFS 1700
+Speed_FCH 2000
+Speed_FCO 2000
+Speed_FSS 2000
+Speed_FPI 2000
+Speed_FFL 1500
+Speed_FCU 2000
+Speed_FRO 1250
+Speed_FDL 1000
+Speed_FLC 1000
+Speed_FDS 1500
+Speed_FSO 1250
+Speed_SHD 1000
+Speed_FBP 1500
+Speed_SRA 1000
+Speed_SHS 1000
+Speed_SSK 1000
+Speed_HSS 1250
+Speed_SP 4000
+Speed_SB 4000
 Speed_SBP 2520
-Speed_HSL 28000
-Speed_SFL 28000
-Speed_CSL  28000
-Speed_WHB 20000
-Speed_ORT 20000
-Speed_PHR 20000
-Speed_ORR 20000
+Speed_HSL 3000
+Speed_SFL 3000
+Speed_CSL 3000
+Speed_WHB 4000
+Speed_ORT 1000
+Speed_PHR 3000
+Speed_ORR 1000
 
 Speed_SPH 0
 Speed_DCR 0.05
@@ -5393,37 +5393,15 @@ jWHB_FSMG  1 #Proportional increase in size of juvenile stages while outside mod
 WHB_FSMG  1
 0.0
 MigIOBox_WHBjuv 130
-0.000 0.026 0.060 0.019 0.039 0.010 0.014 0.005 0.019 0.025 0.016 0.046 0.000 0.014 0.000 0.000 0.024 0.000 0.000 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.005 0.003 0.021 0.024 0.015 0.023 0.006 0.005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.004 0.003 0.000 0.005 0.000 0.021 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.035 0.029 0.036 0.024 0.021 0.054 0.014 0.020 0.000 0.047 0.000 0.029 0.010 0.008 0.000 0.036 0.000 0.009 0.000 0.006 0.000 0.000 0.038 0.013 0.001 0.001 0.002 0.000 0.000 0.000 0.002 0.000 0.001 0.000 0.002 0.001 0.001 0.001 0.000 0.001 0.001 0.001 0.002 0.002 0.000 0.001 0.000 0.000 0.000 0.000 0.000
+0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.95 0.000 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.000 0.95 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.000 0.000 0.000 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.95 0.000 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.000 0.000 0.000
 MigIOBox_WHBad 130
-0.000 0.026 0.060 0.019 0.039 0.010 0.014 0.005 0.019 0.025 0.016 0.046 0.000 0.014 0.000 0.000 0.024 0.000 0.000 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.005 0.003 0.021 0.024 0.015 0.023 0.006 0.005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.004 0.003 0.000 0.005 0.000 0.021 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.035 0.029 0.036 0.024 0.021 0.054 0.014 0.020 0.000 0.047 0.000 0.029 0.010 0.008 0.000 0.036 0.000 0.009 0.000 0.006 0.000 0.000 0.038 0.013 0.001 0.001 0.002 0.000 0.000 0.000 0.002 0.000 0.001 0.000 0.002 0.001 0.001 0.001 0.000 0.001 0.001 0.001 0.002 0.002 0.000 0.001 0.000 0.000 0.000 0.000 0.000
+0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.95 0.000 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.000 0.95 0.000 0.95 0.000 0.95 0.000 0.000 0.95 0.95 0.95 0.95 0.95 0.000 0.000 0.000 0.95 0.000 0.95 0.000 0.95 0.95 0.95 0.95 0.000 0.95 0.95 0.95 0.95 0.95 0.000 0.95 0.000 0.000 0.000 0.000 0.000
 KMIGa_WHB 10       #Numbers and weights of each group that begin outside the model domain and must migrate in during the first year.
-9.857000e+01 7.160000e+01 5.502000e+01 4.275000e+01 3.334000e+01 2.678000e+01 2.111000e+01 1.738000e+01 1.407000e+01 1.129000e+01
+9   7   5   4   3   3   2   2   1   1
 KMIGa_WHBrn 10
-1260526.5 21008775.2 77810278.6 131881828.1 171275101.5 194630797.1 209280427.0 215753017.5 220156140.4 223508771.9
+101258314.783909   148450392.197559   155821576.303567   156842618.265583   156981837.539435   157000779.6239   157003356.12374   157003706.565076   157003754.229923   157003760.712993
 KMIGa_WHBsn 10
-475670.4 7927839.7 29362369.3 49766727.6 64632113.8 73445583.8 78973746.0 81416233.0 83077788.8 84342932.8
-
-##############################################
-#####Groups with no migration ###############
-# Day of year large zooplankton leave the model domain
-ZL_Migrate_Time 1
-364
-# Day of year large zooplankton return to the model domain
-ZL_Migrate_Return   1
-0
-# Period of time migrating large zooplankton exit/enter over
-ZL_Migrate_Period   1
-1
-# Proportional increase in biomass of large zooplankton while outside model domain
-ZL_FSMG   1
-0.0
-# Large zooplankton external/migration survivorship - proportion of migrating biomass that return to the model domain
-ZL_FSM   1
-1.0
-MigIOBox_ZL 130
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-KMIGa_INVERT_ZL 1
-0
+38210684.8164852   56019015.9124191   58800594.8197912   59185893.6733052   59238429.2483333   59245577.2047338   59246549.468824   59246681.7108376   59246699.6975723   59246702.144014
 
 # Proportion from each box in the model that exit when group migrates out of the model domain (default value will be
 # 0 except for the few cells along the boundary where the group can flow out of the model. Juv stands for
@@ -5951,13 +5929,13 @@ pPREY2FPI1	61
 pPREY2FPI2	61
 0.00093578 0.00193578 0.09357798 0 0 0 0 0 0 0 0 0 0.000255046 0 0 0 0 0 0.001518349 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0591743 0 0 0 0.005119266 0 2.45e-07 0 2.45e-05 0.1725 0 0 0 0 2.46e-09 0 0.002123853 0.000238532 2.46e-09 0 0 0 0 0 0 0 0 0
 pPREY1FCU1	61
-0.01673567 0.06863057 9.39e-06 0 0 0 0 0 0 9.39e-07 9.39e-07 9.39e-07 9.39e-07 0.009394904 0.009394904 9.39e-07 0.00093949 0.00093949 9.39e-07 9.39e-07 0.09394904 0 0 0 0 0 0 0 0 0 0 0 0 0.00850318 0.00093949 9.39e-08 0.009394904 0.09394904 9.39e-07 9.39e-08 9.39e-08 0.03963376 0.1725 0.005334395 1.88e-07 0 9.38e-10 0 0 0.000982484 9.03e-05 9.38e-10 0 0 0 0 0 0 0 0 0
+0.01673567 0.06863057 9.39e-06 0 0 0 0 0 0 9.39e-07 9.39e-07 9.39e-07 9.39e-07 0.009394904 0.009394904 9.39e-07 0.00093949 0.00093949 9.39e-07 9.39e-07 0.09394904 0 0 0 0 0 0 0 0 0 0 0 0 0.00850318 0.00093949 9.39e-08 0.009394904 0.09394904 9.39e-07 9.39e-08 9.39e-08 0.03963376 0.1725 0.005334395 1.88e-07 0 9.38e-4 0 0 0.982484e-5 9.03e-05 9.38e-10 0 0 0 0 0 0 0 0 0
 pPREY1FCU2	61
-0.05125 0.0724138 1.68e-05 0 0 0 0 0 0 1.68e-06 1.68e-06 1.68e-06 0.0085517 0.001681034 0 0 0.001681034 0 1.68e-06 1.68e-06 0.03681034 0 0 0 0 0 0 0 0 0 0 0 0 0.00738506 0 0 0.001681034 0.001681034 0 1.68e-07 0 0.1946552 0.038046 0.001681034 0 0 1.69e-09 0 0 0.00108908 1.69e-09 0 0 0 0 0 0 0 0 0 0
+0.05125 0.0724138 1.68e-05 0 0 0 0 0 0 1.68e-06 1.68e-06 1.68e-06 0.0085517 0.001681034 0 0 0.001681034 0 1.68e-06 1.68e-06 0.03681034 0 0 0 0 0 0 0 0 0 0 0 0 0.00738506 0 0 0.001681034 0.001681034 0 1.68e-07 0 0.1946552 0.038046 0.001681034 0 0 0.00108908 0 0 1.69e-09 1.69e-09 0 0 0 0 0 0 0 0 0 0
 pPREY2FCU1	61
-0.01673567 0.06863057 0.009394904 0 0 0 0 0 0 9.39e-07 9.39e-07 9.39e-07 9.39e-07 0.009394904 0.09394904 9.39e-07 0.00093949 0.00093949 9.39e-07 9.39e-07 0.193949 0 0 0 0 0 0 0 0 0 0 0 0 0.00850318 0.00093949 9.39e-08 0.009394904 0.09394904 9.39e-07 9.39e-08 9.39e-08 0.03963376 0.1725 0.005334395 1.88e-07 0 9.38e-10 0 0 0.000982484 9.03e-05 9.38e-10 0 0 0 0 0 0 0 0 0
+0.01673567 0.06863057 0.009394904 0 0 0 0 0 0 9.39e-07 9.39e-07 9.39e-07 9.39e-07 0.009394904 0.09394904 9.39e-07 0.00093949 0.00093949 9.39e-07 9.39e-07 0.193949 0 0 0 0 0 0 0 0 0 0 0 0 0.00850318 0.00093949 9.39e-08 0.009394904 0.09394904 9.39e-07 9.39e-08 9.39e-08 0.03963376 0.1725 0.005334395 1.88e-07 0 9.38e-4 0 0 0.982484e-5 9.03e-05 9.38e-10 0 0 0 0 0 0 0 0 0
 pPREY2FCU2	61
-0.05125 0.0724138 0.1681034 0 0 0 0 0 0 1.68e-06 1.68e-06 1.68e-06 0.0085517 0.001681034 0 0 0.001681034 0 1.68e-06 1.68e-06 0.0681034 0 0 0 0 0 0 0 0 0 0 0 0 0.00738506 0 0 0.01681034 0.001681034 0 1.68e-07 0 0.1946552 0.038046 0.001681034 0 0 1.69e-09 0 0 0.00108908 1.69e-09 0 0 0 0 0 0 0 0 0 0
+0.05125 0.0724138 0.1681034 0 0 0 0 0 0 1.68e-06 1.68e-06 1.68e-06 0.0085517 0.001681034 0 0 0.001681034 0 1.68e-06 1.68e-06 0.0681034 0 0 0 0 0 0 0 0 0 0 0 0 0.00738506 0 0 0.01681034 0.001681034 0 1.68e-07 0 0.1946552 0.038046 0.001681034 0 0 0.00108908 0 0 1.69e-09 1.69e-09 0 0 0 0 0 0 0 0 0 0
 pPREY1FSO1	61
 1.1e-06 0.000110119 1.1e-06 0 0 0 0 0 0 1.1e-06 1.1e-06 1.1e-06 1.1e-06 0.0110119 0.0110119 1.1e-06 0.0110119 0.00110119 1.1e-06 1.1e-06 0.0110119 0 0 0 0 0 0 0 0 0 0 0 0 0.01022222 0 1.1e-07 0 0.1038095 1.1e-06 1.1e-07 0 0.24603 0.1725 0.01230159 2.2e-07 0 1.11e-09 0 0 0.00156746 0.000960318 0 0 0 0 0 0 0 0 0 0
 pPREY1FSO2	61
@@ -6181,13 +6159,13 @@ pPREYPWN	61
 pPREYCEP	61
 0.0249062 0.0664 0.00025 0 0 0 0 0 0 0 0 0 2.5e-05 0 0 1.25e-05 0.002 0 0.00578125 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01625 0 2.34e-05 0.0078125 0 0 8.13e-09 0 0.00284375 0.0150625 0.006828125 0 0 3.88e-06 0 0 0.003125 0.0043125 8.09e-11 0 0 0 0 0 0 0 0 0
 pPREYZG	61
-0.00140625 0.00290625 0.0065625 0 0 0 0 0 0 0 0 0 8.75e-05 0 0 8.75e-05 3.5e-05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01875 0 0 0 0 0.015525 0 0 0 0 1e-06 0 0 0 0.0018075 0.05 0 0 0 0.001 1e-04 0 0 0 0
+0 0 0.0065625 0 0 0 0 0 0 0 0 0 8.75e-05 0 0 8.75e-05 3.5e-05 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01875 0 0 0 0 0.015525 0 0 0 0 0 0 0 0 0.0018075 0.005 0 0 0 0.002 1e-04 0 0 0 0
 pPREYZL	61
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0 0 0 0 0 0 0 0 0 0 0 0 7.72e-09 0.00077193 0 1e-05 0.001562573 0.045322 3.86e-07 3.86e-07 3.86e-07 3.86e-05 3.86e-07 3.86e-07 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0 0 0 0 0 0 0 0 0 0 0 0 7.72e-09 0.00077193 0 1e-05 0.001562573 0.0045322 3.86e-07 3.86e-07 3.86e-07 3.86e-05 3.86e-07 3.86e-07 0 0 0
 pPREYZM	61
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0125 0.0045 0 1e-05 0.3125 0.001 0 0 1e-04 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.0125 0.0045 0 1e-05 0.03125 0.001 0 0 1e-04 0 0 0 0 0
 pPREYZS	61
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.001004464 0.46875 0 0 1e-05 0.000401786 0.000788393 0.001116071 0.003116071 0.001116071 0.000558036 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.001004464 0.46875 0 0 1e-09 0.000401786 0.000788393 0.001116071 0.003116071 0.001116071 0.000558036 0 0 0
 pPREYSPH	61
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.000304487 0.004567308 0 0 4.01e-05 0.003173077 0.00691026 0.02125 0.02125 0.02125 0.0125 0 0 0
 
@@ -7220,7 +7198,7 @@ C_FPS            7
 5.11875 196.26425 224.0875 247.22425 246.99675 247.63375 250.25
 
 C_FHK            10
-1.498 189.307 941.573 1073.84 1316.053 989.52 1060.071 1090.916 1112.151 1122.898
+1.49833333333333 189.306666666667 941.573333333333 1073.84 1316.05333333333 989.52 1060.07083333333 1090.91583333333 1112.15083333333 1122.8975
 
 C_FPO 10
 35.3 309.8 386.12 491.38 833.98 860.44 877.04 884.36 889.36 891.88
@@ -7294,16 +7272,16 @@ C_WHB            10
 
 
 # Primary producer growth
-mum_PL_T15  1.3  ## Maximum growth rate, large phytoplankton d-1 1 - 1.7
-mum_PS_T15  0.7     ## Maximum growth rate, small (pico) phytoplankton d-1 1 - 1.24
-mum_MA_T15  0.07   ## Maximum growth rate, macroalgae d-1 0.1  (0.15)
-mum_SG_T15  0.03    ## Maximum growth rate, seagrass d-1 0.05-0.15
+mum_PL_T15  0.9  ## Maximum growth rate, large phytoplankton d-1 1 - 1.7
+mum_PS_T15  0.6     ## Maximum growth rate, small (pico) phytoplankton d-1 1 - 1.24
+mum_MA_T15  0.3   ## Maximum growth rate, macroalgae d-1 0.1  (0.15, was 0.07)
+mum_SG_T15  0.15    ## Maximum growth rate, seagrass d-1 0.05-0.15 (was 0.03)
 
 # Consumer growth - this is used by Holling type feeding (predcase 0, 1, 2)  INTAKE = C X PREY / 1 + C * E/mum * prey (mg N m3); bigger mum - faster handling time - higher growth.
-mum_ZG_T15  0.05  ## Growth rate of gelatinous zooplankton mg N d-1 0.02 - 0.35   (0.05)
-mum_ZL_T15  0.02   ## Growth rate of laxrgezooplankton -0.04 mg N d-1 0.02 - 0.35
+mum_ZG_T15  0.35  ## Growth rate of gelatinous zooplankton mg N d-1 0.02 - 0.35   (0.05)
+mum_ZL_T15  0.2   ## Growth rate of laxrgezooplankton -0.04 mg N d-1 0.02 - 0.35
 mum_ZM_T15  0.3   ## Growth rate of meso-zooplankton mg N d-1 0.3 - 1.4  (0.9)
-mum_ZS_T15  1.0  ## Growth rate of microzooplankton mg N d-1 0.5 - 2.5      (0.015)
+mum_ZS_T15  0.5  ## Growth rate of microzooplankton mg N d-1 0.5 - 2.5      (0.015)
 mum_BFF_T15 0.015 ## Growth rate of shallow filter feeders mg N d-1 0.004-0.01
 mum_BIV_T15 0.02 ## Growth rate of deep filter feeders mg N d-1 0.01    (0.06)
 mum_BD_T15  0.001 ## Growth rate of deposit feeders mg N d-1 0.005 - 0.07
@@ -7348,7 +7326,7 @@ mum_FPS          7
 15.35625 588.79275 672.2625 741.67275 740.99025 742.90125 750.75
 
 mum_FHK          10
-7.04 513.36 415 417.16 425 425 425 425 425 425
+7.04 567.92 2824.72 3221.52 3948.16 2968.56 3180.2125 3272.7475 3336.4525 3368.6925
 
 mum_FPO 10
 75.36 507.72 1266.68 1882.88 1836.88 1836.88 1836.88 1836.88 1836.88 1836.88
@@ -8300,22 +8278,22 @@ Ktmp_bird 0.08 Factor relating temperature to respiration for seabirds 0.08
 Ktmp_mammal 0.08 Factor relating temperature to respiration for mammals 0.08
 
 # Lysis rate of microalgaes
-KLYS_PL 0.02    # Lysis rate of diatoms d-1 0.0001#
+KLYS_PL 0.00000015    # Lysis rate of diatoms d-1 0.0001#
 KLYS_PS 0.01    #  Lysis rate of picophytoplankton d-1 -0.01 0.01#
-KLYS_MA 0.02      #  Lysis rate of macroalgaes  d-1 (0.01)       0.01#
-KLYS_SG 0.03      #  Lysis rate of seagrass     d-1 (0.01)       0.01#
+KLYS_MA 0.000002      #  Lysis rate of macroalgaes  d-1 (0.01)       0.01#
+KLYS_SG 0.000003      #  Lysis rate of seagrass     d-1 (0.01)       0.01#
 
 mL3_SG_T15 0   Linear mortality of seagrass epiphytes, 15 deg C d-1
 
 # Linear mortality biomass groups calculated as a weighted average rate as usual
-PL_mL        0.0002        #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
+PL_mL        0.0000002        #Linear mortality rate of lg phytopl, 15 deg C     d-1              0.14
 PS_mL        0.0001       #Linear mortality rate of picophytopl, 15 deg C    d-1              0.14
 MA_mL        0.0005       #Linear mortality rate of macroalgae, 15 deg C     d-1              0.002 - 0.04
-SG_mL        0.002        #Linear mortality rate of seagrass, 15 deg C       d-1              0.001 - 0.01
-ZG_mL 0.00455
-ZL_mL        0.00028       #Linear mortality rate of large zoopl, 15 deg C    d-1 (0.001)      0.0 - 0.04
-ZM_mL        0.02        #Linear mortality rate of meso-zoopl, 15 deg C     d-1 (0.001)      0.0 - 0.09
-ZS_mL 0.3
+SG_mL        0.0002        #Linear mortality rate of seagrass, 15 deg C       d-1              0.001 - 0.01
+ZG_mL        0.000455
+ZL_mL        0.00028       #Linear mortality rate of large carniv zoopl, 15 deg C    d-1 (0.001)      0.0 - 0.04
+ZM_mL        0.001        #Linear mortality rate of meso-zoopl, 15 deg C     d-1 (0.001)      0.0 - 0.09
+ZS_mL        0.001
 BFF_mL       0.0000005     #Linear mortality rate of shallow ff, 15 deg C     d-1 (0.000001)   0.0 -  0.001
 BIV_mL       0.0000015     #Linear mortality rate of deep filt feed, 15 deg C d-1 (0.000001)   0.0 -  0.001
 BD_mL        0.0005        #Linear mortality rate of deposit feeder, 15 deg C d-1 (0.0005)     0.0 -  0.001
@@ -8558,7 +8536,7 @@ mStarve_FHK       0.00000001
 mStarve_FPS       0.000001
 mStarve_FPO       0.00001
 mStarve_FCO       0.00001
-mStarve_FFS       0.00001
+mStarve_FFS       0.0000001
 mStarve_FCH       0.00001
 mStarve_FSS       0.00001
 mStarve_FPI       0.00001
@@ -9256,24 +9234,24 @@ Recruit_Period_SHD  105 Length of time recruits arrive over for demersal sharks 
 Recruit_Period_FBP  60  Length of time recruits arrive over for Benthopelagic d 15 - 90
 Recruit_Period_SRA  60   Length of time recruits arrive over for green-eye dogfishs d 15 - 90
 Recruit_Period_SHS  65  Length of time recruits arrive over for Sixgilld 15 - 90
-Recruit_Period_SSK  70  Length of time recruits arrive over for skates and rays d 15 - 90
-Recruit_Period_HSS  30  Length of time recruits arrive over for albatross and petrels d 15 - 90
-Recruit_Period_SP  90  Length of time recruits arrive over for diving seabirds d 15 - 90
-Recruit_Period_SB  90  Length of time recruits arrive over for gulls d          15 - 90
+Recruit_Period_SSK  364  Length of time recruits arrive over for skates and rays d 15 - 90
+Recruit_Period_HSS  30  Length of time recruits arrive over for Hatchery_Sockeye_salmon d 15 - 90
+Recruit_Period_SP  20  Length of time recruits arrive over for diving seabirds d 15 - 90
+Recruit_Period_SB  20  Length of time recruits arrive over for gulls d          15 - 90
 #Recruit_Period_SBP  30  Length of time recruits arrive over for penguins d          15 - 90
-Recruit_Period_HSL  10  Length of time recruits arrive over for Australian Harbor_seals d 15 - 90
+Recruit_Period_HSL  131  Length of time recruits arrive over for Australian Harbor_seals d 15 - 90
 #Recruit_Period_SFL  10  Length of time recruits arrive over for Longnose Harbor_seals d 15 - 90
-Recruit_Period_CSL   10  Length of time recruits arrive over for Sealions d 15 - 90
-Recruit_Period_WHB  30  Length of time recruits arrive over for baleen whales d 15 - 90
-Recruit_Period_ORT  10  Length of time recruits arrive over for toothed whales d 15 - 90
-Recruit_Period_PHR  10  Length of time recruits arrive over for Harbor_porpoise d 15 - 90
-Recruit_Period_ORR  10  Length of time recruits arrive over for Orca_resident d 15 - 90
+Recruit_Period_CSL   20  Length of time recruits arrive over for Sealions d 15 - 90
+Recruit_Period_WHB  44  Length of time recruits arrive over for baleen whales d 15 - 90
+Recruit_Period_ORT  153  Length of time recruits arrive over for toothed whales d 15 - 90
+Recruit_Period_PHR  122  Length of time recruits arrive over for Harbor_porpoise d 15 - 90
+Recruit_Period_ORR  153  Length of time recruits arrive over for Orca_resident d 15 - 90
 
-Recruit_Period_CEP 30       Length of time recruits arrive over for cephalopods     d          0 - 1     (At present use 30 so instantaneous like in old code)
-Recruit_Period_PWN 30       Length of time recruits arrive over for prawns          d          0 - 1     (At present use 30 so instantaneous like in old code)
-Recruit_Period_SPH  30  Length of time recruits arrive over for sponges d 15 - 90
-Recruit_Period_DCR  30  Length of time recruits arrive over for crabs d 15 - 90
-Recruit_Period_BRL  30  Length of time recruits arrive over for crabss d 15 - 90
+#Recruit_Period_CEP 30       Length of time recruits arrive over for cephalopods     d          0 - 1     (At present use 30 so instantaneous like in old code)
+#Recruit_Period_PWN 30       Length of time recruits arrive over for prawns          d          0 - 1     (At present use 30 so instantaneous like in old code)
+#Recruit_Period_SPH  30  Length of time recruits arrive over for sponges d 15 - 90
+#Recruit_Period_DCR  30  Length of time recruits arrive over for crabs d 15 - 90
+#Recruit_Period_BRL  30  Length of time recruits arrive over for crabs d 15 - 90
 
 
 HCO_cohort_recruit_entry  0 Multuiyear complicatated migrations. Usually is set to 0
@@ -9327,7 +9305,7 @@ KSPA_FHK  15.928      Constant in spawning formulation for Hake      10.928
 KSPA_FPO  40.515     Constant in spawning formulation for Pollock 35.515
 KSPA_FCO  188.434    Constant in spawning formulation for Coho salmons 148.434
 KSPA_FFS  669.65   Constant in spawning formulation for shallow piscivores 569.65
-KSPA_FCH  669.65   Constant in spawning formulation for   piscivores 569.65
+KSPA_FCH  409.787   Constant in spawning formulation for   piscivores 569.65
 KSPA_FSS  80.119    Constant in spawning formulation for migratoey mesopelagics 70.119
 KSPA_FPI  71.923    Constant in spawning formulation for non-Sockeye salmon 61.923
 KSPA_FRO  55.532   Constant in spawning formulation for Rockfish 45.532
@@ -9585,7 +9563,7 @@ FFS_recruit_hdistrib  130 #small_flatfish
 0.000 0.025 0.036 0.022 0.023 0.012 0.008 0.006 0.021 0.015 0.010 0.028 0.000 0.016 0.009 0.007 0.028 0.000 0.004 0.006 0.010 0.012 0.000 0.034 0.000 0.000 0.011 0.000 0.024 0.000 0.000 0.004 0.003 0.004 0.002 0.018 0.020 0.013 0.019 0.005 0.004 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.007 0.000 0.014 0.000 0.013 0.003 0.003 0.000 0.006 0.000 0.018 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.020 0.033 0.020 0.014 0.024 0.031 0.016 0.023 0.000 0.027 0.000 0.016 0.012 0.009 0.000 0.021 0.000 0.011 0.000 0.007 0.000 0.000 0.022 0.015 0.006 0.003 0.008 0.002 0.001 0.002 0.008 0.000 0.006 0.002 0.009 0.006 0.003 0.003 0.001 0.005 0.004 0.006 0.008 0.012 0.002 0.003 0.000 0.000 0.000 0.000 0.000
 
 FFL_recruit_hdistrib  130 #large_flatfish
-0.000 0.029 0.036 0.022 0.023 0.012 0.008 0.006 0.021 0.015 0.010 0.028 0.000 0.016 0.009 0.007 0.028 0.000 0.004 0.006 0.010 0.012 0.000 0.034 0.000 0.000 0.011 0.000 0.024 0.000 0.000 0.004 0.003 0.004 0.002 0.018 0.020 0.013 0.019 0.005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.007 0.000 0.014 0.000 0.013 0.003 0.003 0.000 0.006 0.000 0.018 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.020 0.033 0.020 0.000 0.000 0.031 0.016 0.023 0.000 0.027 0.000 0.016 0.012 0.009 0.000 0.021 0.000 0.011 0.000 0.007 0.000 0.000 0.022 0.015 0.006 0.003 0.008 0.002 0.001 0.002 0.008 0.000 0.006 0.002 0.009 0.006 0.003 0.003 0.001 0.005 0.004 0.006 0.008 0.012 0.002 0.000 0.000 0.000 0.000 0.000 0.000
+0.000 0.029 0.036 0.022 0.023 0.012 0.008 0.006 0.021 0.015 0.010 0.028 0.000 0.016 0.009 0.007 0.028 0.000 0.004 0.006 0.010 0.012 0.000 0.034 0.000 0.000 0.011 0.000 0.024 0.000 0.000 0.004 0.003 0.004 0.002 0.018 0.020 0.013 0.019 0.005 0.020 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.007 0.000 0.014 0.000 0.013 0.003 0.003 0.000 0.006 0.000 0.018 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.020 0.033 0.020 0.031 0.021 0.000 0.016 0.023 0.000 0.027 0.000 0.016 0.012 0.009 0.000 0.021 0.000 0.011 0.000 0.007 0.000 0.000 0.022 0.015 0.006 0.003 0.008 0.002 0.001 0.002 0.008 0.000 0.006 0.002 0.009 0.006 0.003 0.003 0.001 0.005 0.004 0.006 0.008 0.012 0.002 0.000 0.000 0.000 0.000 0.000 0.000
 
 SHD_recruit_hdistrib  130 #Dogfish
 0.000 0.025 0.045 0.022 0.029 0.012 0.011 0.006 0.021 0.019 0.012 0.035 0.000 0.016 0.002 0.006 0.028 0.000 0.003 0.006 0.010 0.012 0.000 0.034 0.000 0.000 0.011 0.000 0.006 0.000 0.000 0.001 0.001 0.005 0.003 0.021 0.024 0.015 0.023 0.006 0.005 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.008 0.007 0.000 0.005 0.007 0.000 0.014 0.000 0.013 0.004 0.003 0.000 0.006 0.000 0.021 0.000 0.000 0.000 0.010 0.011 0.002 0.002 0.000 0.000 0.000 0.024 0.033 0.024 0.016 0.024 0.036 0.016 0.023 0.000 0.031 0.000 0.019 0.012 0.009 0.000 0.024 0.000 0.011 0.000 0.007 0.000 0.000 0.025 0.015 0.004 0.002 0.005 0.001 0.001 0.001 0.005 0.000 0.004 0.001 0.006 0.004 0.002 0.002 0.001 0.003 0.003 0.003 0.005 0.007 0.001 0.002 0.000 0.000 0.000 0.000 0.000
@@ -9606,16 +9584,16 @@ SP_recruit_hdistrib  130 #Seabird_gulls
 0.000 0.035 0.026 0.026 0.016 0.014 0.006 0.007 0.026 0.010 0.006 0.019 0.000 0.019 0.007 0.011 0.033 0.000 0.007 0.007 0.012 0.014 0.000 0.041 0.000 0.000 0.013 0.000 0.018 0.000 0.000 0.003 0.002 0.003 0.002 0.016 0.018 0.012 0.017 0.004 0.004 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.016 0.014 0.000 0.006 0.008 0.000 0.017 0.000 0.015 0.003 0.003 0.000 0.007 0.000 0.016 0.000 0.000 0.000 0.020 0.023 0.005 0.004 0.000 0.000 0.000 0.012 0.049 0.012 0.008 0.036 0.018 0.023 0.034 0.000 0.016 0.000 0.010 0.017 0.013 0.000 0.012 0.000 0.016 0.000 0.010 0.000 0.000 0.013 0.022 0.004 0.002 0.006 0.001 0.001 0.001 0.005 0.000 0.005 0.001 0.006 0.004 0.002 0.002 0.001 0.004 0.003 0.004 0.005 0.008 0.001 0.002 0.000 0.000 0.000 0.000 0.000
 
 CSL_recruit_hdistrib  130 #Sealions
-0.000 0.025 0.036 0.019 0.023 0.010 0.008 0.005 0.019 0.015 0.010 0.028 0.000 0.014 0.005 0.007 0.024 0.000 0.004 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.009 0.006 0.041 0.046 0.029 0.043 0.011 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.007 0.007 0.000 0.005 0.000 0.041 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.018 0.029 0.018 0.012 0.021 0.027 0.014 0.020 0.000 0.024 0.000 0.015 0.010 0.008 0.000 0.018 0.000 0.009 0.000 0.006 0.000 0.000 0.019 0.013 0.003 0.001 0.004 0.001 0.001 0.001 0.004 0.000 0.003 0.001 0.005 0.003 0.002 0.002 0.001 0.003 0.002 0.003 0.004 0.006 0.001 0.002 0.000 0.000 0.000 0.000 0.000
+0.000 0.025 0.030 0.019 0.023 0.010 0.008 0.005 0.019 0.015 0.010 0.028 0.000 0.014 0.005 0.007 0.024 0.000 0.004 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.009 0.006 0.041 0.046 0.029 0.043 0.011 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.007 0.007 0.000 0.005 0.000 0.041 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.018 0.029 0.018 0.012 0.021 0.027 0.014 0.020 0.000 0.024 0.000 0.015 0.010 0.008 0.000 0.018 0.000 0.009 0.000 0.006 0.000 0.000 0.019 0.013 0.003 0.001 0.004 0.001 0.001 0.001 0.004 0.000 0.003 0.001 0.005 0.003 0.002 0.002 0.001 0.003 0.002 0.003 0.004 0.006 0.001 0.002 0.000 0.000 0.000 0.000 0.000
 
 HSL_recruit_hdistrib  130 #Harbor_seals
-0.000 0.025 0.036 0.019 0.023 0.010 0.008 0.005 0.019 0.015 0.010 0.028 0.000 0.014 0.005 0.007 0.024 0.000 0.004 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.009 0.006 0.041 0.046 0.029 0.043 0.011 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.007 0.007 0.000 0.005 0.000 0.041 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.018 0.029 0.018 0.012 0.021 0.027 0.014 0.020 0.000 0.024 0.000 0.015 0.010 0.008 0.000 0.018 0.000 0.009 0.000 0.006 0.000 0.000 0.019 0.013 0.003 0.001 0.004 0.001 0.001 0.001 0.004 0.000 0.003 0.001 0.005 0.003 0.002 0.002 0.001 0.003 0.002 0.003 0.004 0.006 0.001 0.002 0.000 0.000 0.000 0.000 0.000
+0.000 0.025 0.030 0.019 0.023 0.010 0.008 0.005 0.019 0.015 0.010 0.028 0.000 0.014 0.005 0.007 0.024 0.000 0.004 0.005 0.009 0.011 0.000 0.030 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.009 0.006 0.041 0.046 0.029 0.043 0.011 0.010 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.006 0.000 0.012 0.000 0.011 0.007 0.007 0.000 0.005 0.000 0.041 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.018 0.029 0.018 0.012 0.021 0.027 0.014 0.020 0.000 0.024 0.000 0.015 0.010 0.008 0.000 0.018 0.000 0.009 0.000 0.006 0.000 0.000 0.019 0.013 0.003 0.001 0.004 0.001 0.001 0.001 0.004 0.000 0.003 0.001 0.005 0.003 0.002 0.002 0.001 0.003 0.002 0.003 0.004 0.006 0.001 0.002 0.000 0.000 0.000 0.000 0.000
 
 PHR_recruit_hdistrib  130 #Harbor_porpoise
 0.000 0.025 0.045 0.022 0.029 0.012 0.011 0.006 0.021 0.019 0.012 0.035 0.000 0.016 0.002 0.007 0.028 0.000 0.004 0.006 0.010 0.012 0.000 0.034 0.000 0.000 0.011 0.000 0.006 0.000 0.000 0.001 0.001 0.006 0.004 0.028 0.031 0.020 0.029 0.008 0.007 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.010 0.009 0.000 0.005 0.007 0.000 0.014 0.000 0.013 0.005 0.004 0.000 0.006 0.000 0.028 0.000 0.000 0.000 0.012 0.014 0.003 0.003 0.000 0.000 0.000 0.024 0.033 0.024 0.016 0.024 0.036 0.016 0.023 0.000 0.031 0.000 0.019 0.012 0.009 0.000 0.024 0.000 0.011 0.000 0.007 0.000 0.000 0.025 0.015 0.001 0.000 0.001 0.000 0.000 0.000 0.001 0.000 0.001 0.000 0.001 0.001 0.000 0.000 0.000 0.001 0.000 0.001 0.001 0.001 0.000 0.000 0.000 0.000 0.000 0.000 0.000
 
 ORT_recruit_hdistrib  130 #Orcas_Transient
-0.000 0.027 0.036 0.020 0.023 0.011 0.008 0.005 0.020 0.015 0.010 0.028 0.000 0.015 0.005 0.002 0.025 0.000 0.001 0.005 0.009 0.011 0.000 0.032 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.007 0.004 0.033 0.037 0.024 0.035 0.009 0.008 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.003 0.003 0.000 0.005 0.006 0.000 0.013 0.000 0.012 0.006 0.005 0.000 0.005 0.000 0.033 0.000 0.000 0.000 0.004 0.005 0.001 0.001 0.000 0.000 0.000 0.024 0.029 0.024 0.016 0.021 0.036 0.014 0.020 0.000 0.031 0.000 0.019 0.010 0.008 0.000 0.024 0.000 0.009 0.000 0.006 0.000 0.000 0.025 0.013 0.005 0.002 0.006 0.002 0.001 0.001 0.006 0.000 0.005 0.001 0.007 0.005 0.002 0.003 0.001 0.004 0.003 0.005 0.006 0.009 0.001 0.002 0.000 0.000 0.000 0.000 0.000
+0.000 0.027 0.036 0.022 0.023 0.011 0.008 0.005 0.020 0.015 0.010 0.028 0.000 0.015 0.005 0.002 0.025 0.000 0.001 0.005 0.009 0.011 0.000 0.032 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.007 0.004 0.033 0.037 0.024 0.035 0.009 0.008 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.003 0.003 0.000 0.005 0.006 0.000 0.013 0.000 0.012 0.006 0.005 0.000 0.005 0.000 0.033 0.000 0.000 0.000 0.004 0.005 0.001 0.001 0.000 0.000 0.000 0.024 0.029 0.024 0.016 0.021 0.036 0.014 0.020 0.000 0.031 0.000 0.019 0.010 0.008 0.000 0.024 0.000 0.009 0.000 0.006 0.000 0.000 0.025 0.013 0.005 0.002 0.006 0.002 0.001 0.001 0.006 0.000 0.005 0.001 0.007 0.005 0.002 0.003 0.001 0.004 0.003 0.005 0.006 0.009 0.001 0.002 0.000 0.000 0.000 0.000 0.000
 
 ORR_recruit_hdistrib  130 #Orcas_Resident
 0.000 0.027 0.036 0.022 0.023 0.011 0.008 0.005 0.020 0.015 0.010 0.028 0.000 0.015 0.005 0.002 0.025 0.000 0.001 0.005 0.009 0.011 0.000 0.032 0.000 0.000 0.010 0.000 0.012 0.000 0.000 0.002 0.001 0.007 0.004 0.033 0.037 0.024 0.035 0.009 0.008 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.003 0.003 0.000 0.005 0.006 0.000 0.013 0.000 0.012 0.006 0.005 0.000 0.005 0.000 0.033 0.000 0.000 0.000 0.004 0.005 0.001 0.001 0.000 0.000 0.000 0.024 0.029 0.024 0.016 0.021 0.036 0.014 0.020 0.000 0.031 0.000 0.019 0.010 0.008 0.000 0.024 0.000 0.009 0.000 0.006 0.000 0.000 0.025 0.013 0.005 0.002 0.006 0.002 0.001 0.001 0.006 0.000 0.005 0.001 0.007 0.005 0.002 0.003 0.001 0.004 0.003 0.005 0.006 0.009 0.001 0.002 0.000 0.000 0.000 0.000 0.000
@@ -10553,45 +10531,44 @@ KWRR_ORR  360150.4  # Reserve weight of Orca_resident young           mg N      
 #KWRR_BRL            Reserve weight of crabs young                    mg N
 
 # Minimum and maximum spawning temperatures
-HCO_min_spawn_temp 2
+HCO_min_spawn_temp 1.3
 HCH_min_spawn_temp 2
 FHK_min_spawn_temp 2
 FPS_min_spawn_temp 2
 FHE_min_spawn_temp 2
 FSA_min_spawn_temp 2
 FPO_min_spawn_temp 2
-FCO_min_spawn_temp 2
-FFS_min_spawn_temp 2
+FCO_min_spawn_temp 1.3
+FFS_min_spawn_temp 0
 FCH_min_spawn_temp 2
-FSS_min_spawn_temp 2
+FSS_min_spawn_temp 0.3
 FPI_min_spawn_temp 2
 FRO_min_spawn_temp 2
-FCU_min_spawn_temp 2
-FFL_min_spawn_temp 2
-FDL_min_spawn_temp 2
-FLC_min_spawn_temp 2
+FCU_min_spawn_temp 0.3
+FFL_min_spawn_temp 0
+FDL_min_spawn_temp 0
+FLC_min_spawn_temp 0
 FDS_min_spawn_temp 2
 FSO_min_spawn_temp 2
-SHD_min_spawn_temp 2
-FBP_min_spawn_temp 2
-SRA_min_spawn_temp 2
-SSK_min_spawn_temp 2
-SHS_min_spawn_temp 2
-HSS_min_spawn_temp 2
-SB_min_spawn_temp 2
-SP_min_spawn_temp 2
-#SBP_min_spawn_temp 2
-SPH_min_spawn_temp 2
-DCR_min_spawn_temp 2
-BRL_min_spawn_temp 2
-HSL_min_spawn_temp 2
-#SFL_min_spawn_temp 2
-CSL_min_spawn_temp  2
-WHB_min_spawn_temp 2
-ORT_min_spawn_temp 2
-PHR_min_spawn_temp 2
-ORR_min_spawn_temp 2
-CEP_min_spawn_temp  15
+SHD_min_spawn_temp 0
+FBP_min_spawn_temp 0
+SRA_min_spawn_temp 0
+SSK_min_spawn_temp 0
+SHS_min_spawn_temp 0
+HSS_min_spawn_temp 0.3
+SB_min_spawn_temp 0
+SP_min_spawn_temp 0
+SPH_min_spawn_temp 0
+DCR_min_spawn_temp 0
+BRL_min_spawn_temp 0
+HSL_min_spawn_temp 0
+#SFL_min_spawn_temp 0
+CSL_min_spawn_temp  0
+WHB_min_spawn_temp 0
+ORT_min_spawn_temp 0
+PHR_min_spawn_temp 0
+ORR_min_spawn_temp 0
+CEP_min_spawn_temp 2
 
 CEP_max_spawn_temp  30
 HCO_max_spawn_temp 25

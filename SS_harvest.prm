@@ -877,11 +877,11 @@ flagF_HSL 18
 flagF_PHR 18
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 flagF_ORR 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_ORT 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_WHB 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_BRL 18
 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
 flagF_DCR 18
@@ -977,7 +977,7 @@ DRG_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY dredgin
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 flagfinfish		1	 ## Finfish fisheries active,[0] = off [1] On
 flagSimpleStartStopMPAs	0	 ## start/stop a static MPA once
-flagincidmort		0	 ## Fisheries cause incidental mortality (take bycatch) [1] Yes or [0] No
+flagincidmort		1	 ## Fisheries cause incidental mortality (take bycatch) [1] Yes or [0] No
 flaghighgrading		0	 ## High grading [1] Yes or [0] No
 flagmarketdiscard	0	 ## Market-based discarding [1] Yes or [0] No
 flagendangered		0	 ## Endangered group status effect effort allocation [1] Yes or [0] No
@@ -2276,23 +2276,23 @@ highgrade_thresh	0.1	 ## Proportion of catch which defines perferred target size
 ## Forced fishing mortality rates (per day) for
 
 mFC_FHE 18
-0 0 0 0 0 1.2e-7 0 0 1.8e-7 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 1.2e-4 0 0 1.8e-7 0 0 0 0 0 0 0 0 0
 mFC_FPS 18
 0 0 0 0 0 1.25e-4 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_FSA 18
 0 0 0 0 0 2e-5 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_FCH 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-8 0 0 1.0e-8 1.0e-8 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FCO 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-8 0 0 1.0e-8 1.0e-8 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FSS 18
-0 0 0 0 2.0e-8 0 0 0 5.0e-9 0 0 5.0e-9 5.0e-9 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FPI 18
-0 0 0 0 7.0e-6 0 0 0 7.0e-6 0 0 7.0e-6 7.0e-6 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FCU 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-7 0 0 1.0e-7 1.0e-7 0 0 0 0 0
+0 0 0 0 5e-5 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FSO 18
-0 0 0 0 2.5e-5 0 0 0 2.5e-5 0 0 2.5e-5 2.5e-5 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_HCH 18
 0 0 0 0 0 0 0 0 0 0 3.0e-3 0 0 0 0 0 0 0
 mFC_HCO 18
@@ -2336,11 +2336,11 @@ mFC_HSL 18
 mFC_PHR 18
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_ORR 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_ORT 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_WHB 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_BRL 18
 0.00008 0 0 0 0 0 0 0 0 0 0 0.00003 0 0 0 0 0 0
 mFC_DCR 18
@@ -2752,7 +2752,7 @@ FCcocatchSRA	58	## Proportional discarding based on catch of another species
 FCcocatchSSK	58	## Proportional discarding based on catch of another species
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchSB	58	## Proportional discarding based on catch of another species
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0.001 0.001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchSP	58	## Proportional discarding based on catch of another species
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchCSL	58	## Proportional discarding based on catch of another species

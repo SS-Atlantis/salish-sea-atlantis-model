@@ -3082,7 +3082,7 @@ salt_correction_PWN    1.0
 ## Tolerances and boundaries
 RelTol    0.1   Relative tolerance of the adaptive differentiation scheme 0.1
 Flux_tol  0.2   Tolerance of mass balance assumption per cell mg N m-3 0.1
-min_pool  0.000000000000001  Minimum pool size 0.00000001
+min_pool  0.00000001  Minimum pool size 0.00000001
 min_dens  0.0001   Minimum density of top predators and fish 0.0001
 
 min_channel_depth 0.001  Minimum depth of estuarine channels

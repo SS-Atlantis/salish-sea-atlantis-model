@@ -117,20 +117,21 @@ HCO_age_harvest 1
 HSS_age_harvest 1
 
 ## Contaminant related
-flag_contam_fisheries_mgmt      1       # Kind of closures due to contaminants - 0 = none, 1 = set day, 2 = based on concentration in functional groups
-contam_fishery_closure_day      1        # Day of the run the closure will begin 5840
-contam_fishery_closure_period   30       # Length of the closure in days
+flag_contam_fisheries_mgmt      0       # Kind of closures due to contaminants - 0 = none, 1 = set day, 2 = based on concentration in functional groups
+contam_fishery_closure_day      9855    # Day of the run the closure will begin 5840
+contam_fishery_closure_period   90      # Length of the closure in days
 contam_fishery_closure_option           # For concentration-based closures use this flag to say whether only immediate box is closed (0) or adjacent boxes are are also closed
 
+## TurnPoint 5b affected_boxes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 60, 33, 66]
 ContamClosed    130                     # Number of boxes in model, with 1 for boxes that are closed and 0 if they remain open
-0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+0	1	1	1	1	1	1	1	1	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
 
 # When using the concentration based closures then the threshold level for each contaminant is required
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
-Naphthalene_fishery_thresh_level 1000000.0
-Phenanthrene_fishery_thresh_level 1000000.0
-Pyrene_fishery_thresh_level 1000000.0
-Benzo_fishery_thresh_level 1000000.0
+Naphthalene_fishery_thresh_level 0.0084
+Phenanthrene_fishery_thresh_level 0.0084
+Pyrene_fishery_thresh_level 0.0084
+Benzo_fishery_thresh_level 0.0084
 
 # Fisheries habitat related - the vectors indicate which habitat patchiness equation
 # to use when applying fishing mortality related mortality.
@@ -877,11 +878,11 @@ flagF_HSL 18
 flagF_PHR 18
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 flagF_ORR 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_ORT 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_WHB 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
 flagF_BRL 18
 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
 flagF_DCR 18
@@ -953,31 +954,31 @@ ONG_tStart	0	## Day of the start for the FISHERY energy generation impacts
 TOUR_tStart	0	## Day of the start for the FISHERY tourism
 DRG_tStart	0	## Day of the start for the FISHERY dredging
 
-CrabTRAP_tEnd	1e+12	## Day of the end for the FISHERY crab and prawn traps
-PrawnTRAWL_tEnd	1e+12	## Day of the end for the FISHERY trawl for prawns and scallops
-InvertDIVE_tEnd	1e+12	## Day of the end for the FISHERY Invertebrate dive
-KrillTRAWL_tEnd	1e+12	## Day of the end for the FISHERY Euphausiid fishery
-Salmon_tEnd	1e+12	## Day of the end for the FISHERY seine, gillnet, hook and line
-PelagicsFISH_tEnd	1e+12	## Day of the end for the FISHERY Small pelagics fisheries
-FishTRAWL_tEnd	1e+12	## Day of the end for the FISHERY Groundfish trawl fisheries
-FishLINE_tEnd	1e+12	## Day of the end for the FISHERY Groundfish hook line fisheries
-FSC_tEnd	1e+12	## Day of the end for the FISHERY First Nations Fisheries
-AqualSHELL_tEnd	1e+12	## Day of the end for the FISHERY aquaculture on shellfish
-AqualFISH_tEnd	1e+12	## Day of the end for the FISHERY aquaculture on fish
-Recfish_tEnd	1e+12	## Day of the end for the FISHERY recreational fisheries
-CHRTboat_tEnd	1e+12	## Day of the end for the FISHERY charter vessels
-SHIP_tEnd	1e+12	## Day of the end for the FISHERY shipping impacts
-LANDUSE_tEnd	1e+12	## Day of the end for the FISHERY land use impacts
-ONG_tEnd	1e+12	## Day of the end for the FISHERY energy generation impacts
-TOUR_tEnd	1e+12	## Day of the end for the FISHERY tourism
-DRG_tEnd	1e+12	## Day of the end for the FISHERY dredging
+CrabTRAP_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY crab and prawn traps
+PrawnTRAWL_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY trawl for prawns and scallops
+InvertDIVE_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY Invertebrate dive
+KrillTRAWL_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY Euphausiid fishery
+Salmon_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY seine, gillnet, hook and line
+PelagicsFISH_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY Small pelagics fisheries
+FishTRAWL_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY Groundfish trawl fisheries
+FishLINE_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY Groundfish hook line fisheries
+FSC_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY First Nations Fisheries
+AqualSHELL_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY aquaculture on shellfish
+AqualFISH_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY aquaculture on fish
+Recfish_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY recreational fisheries
+CHRTboat_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY charter vessels
+SHIP_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY shipping impacts
+LANDUSE_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY land use impacts
+ONG_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY energy generation impacts
+TOUR_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY tourism
+DRG_tEnd	1e+10	## Active: 2 = no preference, 1 = day, 0 = night, FISHERY dredging
 
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 ## - MANAGEMENT FLAGS --  ##
 ## ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 flagfinfish		1	 ## Finfish fisheries active,[0] = off [1] On
 flagSimpleStartStopMPAs	0	 ## start/stop a static MPA once
-flagincidmort		0	 ## Fisheries cause incidental mortality (take bycatch) [1] Yes or [0] No
+flagincidmort		1	 ## Fisheries cause incidental mortality (take bycatch) [1] Yes or [0] No
 flaghighgrading		0	 ## High grading [1] Yes or [0] No
 flagmarketdiscard	0	 ## Market-based discarding [1] Yes or [0] No
 flagendangered		0	 ## Endangered group status effect effort allocation [1] Yes or [0] No
@@ -1040,24 +1041,24 @@ ONG_start_manage	0	## Start date for fishery management in days after the start 
 TOUR_start_manage	0	## Start date for fishery management in days after the start of the run for: tourism
 DRG_start_manage	0	## Start date for fishery management in days after the start of the run for: dredging
 
-CrabTRAP_end_manage	1e+12	## End date for fishery management in days after the start of the run for: crab and prawn traps
-PrawnTRAWL_end_manage	1e+12	## End date for fishery management in days after the start of the run for: trawl for prawns and scallops
-InvertDIVE_end_manage	1e+12	## End date for fishery management in days after the start of the run for: Invertebrate dive
-KrillTRAWL_end_manage	1e+12	## End date for fishery management in days after the start of the run for: Euphausiid fishery
-Salmon_end_manage	1e+12	## End date for fishery management in days after the start of the run for: seine, gillnet, hook and line
-PelagicsFISH_end_manage	1e+12	## End date for fishery management in days after the start of the run for: Small pelagics fisheries
-FishTRAWL_end_manage	1e+12	## End date for fishery management in days after the start of the run for: Groundfish trawl fisheries
-FishLINE_end_manage	1e+12	## End date for fishery management in days after the start of the run for: Groundfish hook line fisheries
-FSC_end_manage	1e+12	## End date for fishery management in days after the start of the run for: First Nations Fisheries
-AqualSHELL_end_manage	1e+12	## End date for fishery management in days after the start of the run for: aquaculture on shellfish
-AqualFISH_end_manage	1e+12	## End date for fishery management in days after the start of the run for: aquaculture on fish
-Recfish_end_manage	1e+12	## End date for fishery management in days after the start of the run for: recreational fisheries
-CHRTboat_end_manage	1e+12	## End date for fishery management in days after the start of the run for: charter vessels
-SHIP_end_manage	1e+12	## End date for fishery management in days after the start of the run for: shipping impacts
-LANDUSE_end_manage	1e+12	## End date for fishery management in days after the start of the run for: land use impacts
-ONG_end_manage	1e+12	## End date for fishery management in days after the start of the run for: energy generation impacts
-TOUR_end_manage	1e+12	## End date for fishery management in days after the start of the run for: tourism
-DRG_end_manage	1e+12	## End date for fishery management in days after the start of the run for: dredging
+CrabTRAP_end_manage	1e+10	## End date for fishery management in days after the start of the run for: crab and prawn traps
+PrawnTRAWL_end_manage	1e+10	## End date for fishery management in days after the start of the run for: trawl for prawns and scallops
+InvertDIVE_end_manage	1e+10	## End date for fishery management in days after the start of the run for: Invertebrate dive
+KrillTRAWL_end_manage	1e+10	## End date for fishery management in days after the start of the run for: Euphausiid fishery
+Salmon_end_manage	1e+10	## End date for fishery management in days after the start of the run for: seine, gillnet, hook and line
+PelagicsFISH_end_manage	1e+10	## End date for fishery management in days after the start of the run for: Small pelagics fisheries
+FishTRAWL_end_manage	1e+10	## End date for fishery management in days after the start of the run for: Groundfish trawl fisheries
+FishLINE_end_manage	1e+10	## End date for fishery management in days after the start of the run for: Groundfish hook line fisheries
+FSC_end_manage	1e+10	## End date for fishery management in days after the start of the run for: First Nations Fisheries
+AqualSHELL_end_manage	1e+10	## End date for fishery management in days after the start of the run for: aquaculture on shellfish
+AqualFISH_end_manage	1e+10	## End date for fishery management in days after the start of the run for: aquaculture on fish
+Recfish_end_manage	1e+10	## End date for fishery management in days after the start of the run for: recreational fisheries
+CHRTboat_end_manage	1e+10	## End date for fishery management in days after the start of the run for: charter vessels
+SHIP_end_manage	1e+10	## End date for fishery management in days after the start of the run for: shipping impacts
+LANDUSE_end_manage	1e+10	## End date for fishery management in days after the start of the run for: land use impacts
+ONG_end_manage	1e+10	## End date for fishery management in days after the start of the run for: energy generation impacts
+TOUR_end_manage	1e+10	## End date for fishery management in days after the start of the run for: tourism
+DRG_end_manage	1e+10	## End date for fishery management in days after the start of the run for: dredging
 
 CrabTRAP_flagmanage	0	## Adaptive Management [0] No, [1] Simple, [2] TACs for: crab and prawn traps
 PrawnTRAWL_flagmanage	0	## Adaptive Management [0] No, [1] Simple, [2] TACs for: trawl for prawns and scallops
@@ -1841,14 +1842,14 @@ FishTRAWL_maxdepth	700	## Maximum seafloor depths for the fishery Groundfish tra
 FishLINE_maxdepth	250	## Maximum seafloor depths for the fishery Groundfish hook line fisheries
 FSC_maxdepth		150	## Maximum seafloor depths for the fishery First Nations Fisheries
 AqualSHELL_maxdepth	50	## Maximum seafloor depths for the fishery aquaculture on shellfish
-AqualFISH_maxdepth	1e+12	## Maximum seafloor depths for the fishery aquaculture on fish
+AqualFISH_maxdepth	1e+10	## Maximum seafloor depths for the fishery aquaculture on fish
 Recfish_maxdepth	100	## Maximum seafloor depths for the fishery recreational fisheries
 CHRTboat_maxdepth	100	## Maximum seafloor depths for the fishery charter vessels
-SHIP_maxdepth		1e+12	## Maximum seafloor depths for the fishery shipping impacts
-LANDUSE_maxdepth	1e+12	## Maximum seafloor depths for the fishery land use impacts
-ONG_maxdepth		1e+12	## Maximum seafloor depths for the fishery energy generation impacts
-TOUR_maxdepth		1e+12	## Maximum seafloor depths for the fishery tourism
-DRG_maxdepth		1e+12	## Maximum seafloor depths for the fishery dredging
+SHIP_maxdepth		1e+10	## Maximum seafloor depths for the fishery shipping impacts
+LANDUSE_maxdepth	1e+10	## Maximum seafloor depths for the fishery land use impacts
+ONG_maxdepth		1e+10	## Maximum seafloor depths for the fishery energy generation impacts
+TOUR_maxdepth		1e+10	## Maximum seafloor depths for the fishery tourism
+DRG_maxdepth		1e+10	## Maximum seafloor depths for the fishery dredging
 
 ##  CrabTRAP | PrawnTRAWL | InvertDIVE | KrillTRAWL | Salmon | PelagicsFISH | FishTRAWL | FishLINE | FSC | AqualSHELL | AqualFISH | Recfish | CHRTboat | SHIP | LANDUSE | ONG | TOUR | DRG |
 imposecatchstart_FHE	18	## Catch time series start dates for
@@ -2277,23 +2278,23 @@ highgrade_thresh	0.1	 ## Proportion of catch which defines perferred target size
 ## Forced fishing mortality rates (per day) for
 
 mFC_FHE 18
-0 0 0 0 0 1.2e-7 0 0 1.8e-7 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 1.2e-4 0 0 1.8e-7 0 0 0 0 0 0 0 0 0
 mFC_FPS 18
 0 0 0 0 0 1.25e-4 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_FSA 18
 0 0 0 0 0 2e-5 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_FCH 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-8 0 0 1.0e-8 1.0e-8 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FCO 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-8 0 0 1.0e-8 1.0e-8 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FSS 18
-0 0 0 0 2.0e-8 0 0 0 5.0e-9 0 0 5.0e-9 5.0e-9 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FPI 18
-0 0 0 0 7.0e-6 0 0 0 7.0e-6 0 0 7.0e-6 7.0e-6 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FCU 18
-0 0 0 0 1.0e-7 0 0 0 1.0e-7 0 0 1.0e-7 1.0e-7 0 0 0 0 0
+0 0 0 0 5e-5 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_FSO 18
-0 0 0 0 2.5e-5 0 0 0 2.5e-5 0 0 2.5e-5 2.5e-5 0 0 0 0 0
+0 0 0 0 2.5e-4 0 0 0 2.5e-6 0 0 2.5e-8 2.5e-5 0 0 0 0 0
 mFC_HCH 18
 0 0 0 0 0 0 0 0 0 0 3.0e-3 0 0 0 0 0 0 0
 mFC_HCO 18
@@ -2337,11 +2338,11 @@ mFC_HSL 18
 mFC_PHR 18
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 mFC_ORR 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_ORT 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_WHB 18
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1.0e-11 0 0 0 0
 mFC_BRL 18
 0.00008 0 0 0 0 0 0 0 0 0 0 0.00003 0 0 0 0 0 0
 mFC_DCR 18
@@ -2753,7 +2754,7 @@ FCcocatchSRA	58	## Proportional discarding based on catch of another species
 FCcocatchSSK	58	## Proportional discarding based on catch of another species
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchSB	58	## Proportional discarding based on catch of another species
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0.001 0.001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchSP	58	## Proportional discarding based on catch of another species
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 FCcocatchCSL	58	## Proportional discarding based on catch of another species
@@ -5639,239 +5640,239 @@ DRG_seasonclose	364	## Day of the year season closes (last day 364) for the fish
 
 ##  CrabTRAP | PrawnTRAWL | InvertDIVE | KrillTRAWL | Salmon | PelagicsFISH | FishTRAWL | FishLINE | FSC | AqualSHELL | AqualFISH | Recfish | CHRTboat | SHIP | LANDUSE | ONG | TOUR | DRG |
 TripLimit_FHE	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FPS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FSA	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FCH	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FCO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FSS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FPI	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FCU	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FSO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_HCH	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_HCO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_HSS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FHK	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FPO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FLC	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FBP	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FDS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FDL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FRO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FFS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_FFL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SHD	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SHS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SRA	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SSK	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SB	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SP	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_CSL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_HSL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_PHR	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ORR	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ORT	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_WHB	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BRL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_DCR	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BIV	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_CEP	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BFF	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SPH	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BG	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BMD	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_PWN	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BD	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BC	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_MA	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_SG	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ZG	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_PL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_PS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ZL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ZM	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_ZS	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_PB	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BB	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_BO	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_DL	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_DR	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TripLimit_DC	18	## Individual trip limits (in tonnes) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 
 ##  CrabTRAP | PrawnTRAWL | InvertDIVE | KrillTRAWL | Salmon | PelagicsFISH | FishTRAWL | FishLINE | FSC | AqualSHELL | AqualFISH | Recfish | CHRTboat | SHIP | LANDUSE | ONG | TOUR | DRG |
 TAC_FHE	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FPS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FSA	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FCH	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FCO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FSS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FPI	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FCU	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FSO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_HCH	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_HCO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_HSS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FHK	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FPO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FLC	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FBP	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FDS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FDL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FRO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FFS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_FFL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SHD	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SHS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SRA	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SSK	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SB	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SP	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_CSL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_HSL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_PHR	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ORR	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ORT	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_WHB	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BRL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_DCR	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BIV	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_CEP	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BFF	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SPH	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BG	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BMD	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_PWN	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BD	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BC	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_MA	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_SG	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ZG	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_PL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_PS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ZL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ZM	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_ZS	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_PB	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BB	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_BO	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_DL	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_DR	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 TAC_DC	18	## Total allowable catch (TAC) per fishery for the group
-1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12 1e+12
+1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10 1e+10
 
 CrabTRAP_max_num_sp	0	## Maximum number of groups can exceed its TAC before being closed the fishery crab and prawn traps
 PrawnTRAWL_max_num_sp	0	## Maximum number of groups can exceed its TAC before being closed the fishery trawl for prawns and scallops

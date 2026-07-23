@@ -1,6 +1,10 @@
 ## Salish Sea Atlantis Model
 
+[![DOI](https://zenodo.org/badge/942868475.svg)](https://doi.org/10.5281/zenodo.21503033)
+
 This repository contains parameter files for the Salish Sea Atlantis Model. The Atlantis ecosystem model framework was developed by Dr. Beth Fulton at the Commonwealth Scientific and Industrial Research Organisation (CSIRO). Access Atlantis at [https://research.csiro.au/atlantis/home/links/](https://research.csiro.au/atlantis/home/links/)
+
+[https://github.com/Atlantis-Ecosystem-Model](https://github.com/Atlantis-Ecosystem-Model)
 
 *CSIRO Report describing the Salish Sea Atlantis model:*
 

@@ -118,7 +118,7 @@ HSS_age_harvest 1
 
 ## Contaminant related
 flag_contam_fisheries_mgmt      1       # Kind of closures due to contaminants - 0 = none, 1 = set day, 2 = based on concentration in functional groups
-contam_fishery_closure_day  9855        # Day of the run the closure will begin 2019 winter=9855 2020winter=10220
+contam_fishery_closure_day  10402        # Day of the run the closure will begin 2019 winter=9855 2020winter=10220
 contam_fishery_closure_period   90      # Length of the closure in days
 contam_fishery_closure_option           # For concentration-based closures use this flag to say whether only immediate box is closed (0) or adjacent boxes are are also closed
 
